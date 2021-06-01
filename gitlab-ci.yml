@@ -1,0 +1,7 @@
+stages:
+  frontend-tests
+
+frontend-tests:
+  stage: frontend-tests
+  script:
+    - npm run test
