@@ -11,4 +11,5 @@ frontend-tests:
 test-deployment:
   stage: test-deployment
   script:
+    - npm install
     - npm start
