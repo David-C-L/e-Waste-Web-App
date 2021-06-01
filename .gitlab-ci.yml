@@ -15,4 +15,4 @@ test-deployment:
     - kill -9 $(lsof -t -i:3000) || echo "Nothing to kill or kill failed"
     - npm install
     - npm run build
-    - screen -m -d serve -s build -l 3000
+    - serve -s build -l 3000
