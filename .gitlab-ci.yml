@@ -2,6 +2,9 @@ stages:
   - frontend-tests
   - test-deployment
 
+variables:
+  PORT_NO: 5000
+
 frontend-tests:
   stage: frontend-tests
   script:
@@ -12,4 +15,7 @@ test-deployment:
   stage: test-deployment
   script:
     - npm install
-    - npm start
+    - echo "Killing old running process."
+    - kill -9 $(lsof -t -i:3000)
+    - apt-get update && apt-get install -y screen && apt-get install -y curl 
+    - screen -m -d npm start
