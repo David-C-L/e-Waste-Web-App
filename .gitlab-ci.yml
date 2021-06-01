@@ -2,10 +2,13 @@ stages:
   - frontend-tests
   - test-deployment
 
+before-script:
+  script:
+    - npm install
+
 frontend-tests:
   stage: frontend-tests
   script:
-    - npm install
     - npm run test
 
 test-deployment:
