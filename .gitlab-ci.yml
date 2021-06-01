@@ -12,5 +12,6 @@ test-deployment:
   stage: test-deployment
   script:
     - npm install
+    - npm install -g serve
     - npm run build
     - serve -s build/
