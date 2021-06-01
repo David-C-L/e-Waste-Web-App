@@ -11,7 +11,4 @@ frontend-tests:
 test-deployment:
   stage: test-deployment
   script:
-    - npm install
-    - sudo npm install -g serve
-    - npm run build
-    - serve -s build/
+    - npm start
