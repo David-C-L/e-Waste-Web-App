@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NavBar component matches the snapshot 1`] = `
+<div
+  className="NavBar"
+>
+  <p>
+    <a
+      className="NavBarLink"
+      href="/"
+      onClick={[Function]}
+    >
+      Home
+    </a>
+    <a
+      className="NavBarLink"
+      href="/login"
+      onClick={[Function]}
+    >
+      Login
+    </a>
+  </p>
+</div>
+`;
