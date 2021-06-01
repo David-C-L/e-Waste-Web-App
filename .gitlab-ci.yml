@@ -1,5 +1,11 @@
 stages:
+  - compile-dependencies
   - frontend-tests
+
+compile-dependencies:
+  stage: compile-dependencies
+  script:
+    - npm install
 
 frontend-tests:
   stage: frontend-tests
