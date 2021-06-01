@@ -14,4 +14,5 @@ test-deployment:
     - npm install
     - echo "Killing old running process."
     - kill -9 $(lsof -t -i:3000) || "Nothing to kill or kill failed"
-    - screen -m -d npm start
+    - npm run build
+    - serve -s build -l 3000
