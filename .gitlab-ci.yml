@@ -2,6 +2,9 @@ stages:
   - frontend-tests
   - test-deployment
 
+variables:
+  PORT_NO: 3000
+
 frontend-tests:
   stage: frontend-tests
   script:
@@ -12,7 +15,8 @@ test-deployment:
   stage: test-deployment
   script:
     - echo "Killing old running process."
-    - kill -9 $(lsof -t -i:3000) || echo "Nothing to kill or kill failed"
+    - kill -9 $(lsof -t -i:$PORT_NO) || echo "Nothing to kill or kill failed"
     - npm install
     - npm run build
-    - serve -s build -l tcp://146.169.41.57:3000/
+    - export PORT=$PORT_NO
+    - serve -s build -l tcp://146.169.41.57:$PORT_NO/
