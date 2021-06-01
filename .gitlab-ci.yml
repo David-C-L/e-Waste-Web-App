@@ -2,7 +2,7 @@ stages:
   - frontend-tests
   - test-deployment
 
-before-script:
+before_script:
   script:
     - npm install
 
