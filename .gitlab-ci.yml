@@ -1,5 +1,5 @@
 stages:
-  frontend-tests
+  - frontend-tests
 
 frontend-tests:
   stage: frontend-tests
