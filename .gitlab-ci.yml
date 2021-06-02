@@ -1,6 +1,7 @@
 stages:
   - frontend-tests
   - test-deployment
+  - production-deployment
 
 variables:
   PORT_NO: 3000
@@ -20,3 +21,9 @@ test-deployment:
     - npm run build
     - export PORT=$PORT_NO
     - screen -m -d serve -s build -l $PORT_NO
+
+production-deployment:
+  stage: production-deployment
+  script:
+    - echo "Deploying to production"
+    - dpl --provider=heroku --app=drp21 --api-key=$HEROKU_API_KEY
