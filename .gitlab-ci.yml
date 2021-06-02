@@ -19,4 +19,4 @@ test-deployment:
     - npm install
     - npm run build
     - export PORT=$PORT_NO
-    - serve -s build -l tcp://146.169.41.57:$PORT_NO/
+    - screen -m -d serve -s build -l $PORT_NO
