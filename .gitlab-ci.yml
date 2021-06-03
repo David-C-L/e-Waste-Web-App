@@ -18,7 +18,7 @@ test-deployment:
     - echo "Killing old running process."
     - kill -9 $(lsof -t -i:$PORT_NO) || echo "Nothing to kill or kill failed"
     - npm install
-    - npm run build
+    - CI=false npm run build
     - export PORT=$PORT_NO
     - screen -m -d serve -s build -l $PORT_NO
 

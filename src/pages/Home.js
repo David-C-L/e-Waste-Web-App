@@ -1,6 +1,6 @@
 import './Home.css';
 import logo from '../images/recycle-logo.png';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import MultiSelect from './MultiSelect'
 import axios from 'axios'
 
@@ -9,16 +9,7 @@ function Home() {
 
     const [category, setCategory] = useState([])
     const [description, setDescription] = useState("")
-    const [getReq, setGetReq] = useState({})
 
-    // useEffect(() => {
-    //     // GET request using fetch inside useEffect React hook
-    //     fetch('https://drp21-backend.herokuapp.com/api/v1/posts')
-    //         .then(response => response.json())
-    //         .then(data => setGetReq(data));
-
-    // // empty dependency array means this effect will only run once (like componentDidMount in classes)
-    // }, []);
 
     const ops = [
         { value: 'recycle', label: 'Recycle' },
@@ -74,25 +65,40 @@ function Home() {
                     <input type="text" onChange={handleTextChange} value={description} />
                     <button type="submit" onClick={handleSubmit}>Post</button>
                 </div>
-
+                <Posts />
             </header>
         </div>
     );
 }
+function Posts() {
+    const [getReq, setGetReq] = useState({})
+
+    useEffect(() => {
+        // GET request using axios inside useEffect React hook
+        axios.get('https://drp21-backend.herokuapp.com/api/v1/posts')
+            .then(response => setGetReq(response));
+        console.log(getReq)
+    }, []);
+
+    const noteRootStyle = {
+        border: "2px #0af solid",
+        borderRadius: 9,
+        margin: 20,
+        backgroundColor: "#efefef",
+        padding: 6,
+        color: "black"
+    };
+
+    return (
+        <div style={{ width: 400 }}>
+            {getReq.data === undefined ? <div></div> : getReq.data.map(ele =>
+                <div key={ele.id} style={noteRootStyle}>
+                    <h3>{ele.category}</h3>
+                    <p>{ele.text}</p>
+                </div>
+            )}
+        </div>
+    )
+}
 
 export default Home;
-
-// axois.post('https://drp21-backend.herokuapp.com/api/v1/posts', {
-//     method: 'POST',
-//     headers: {
-//         'Content-Type': 'application/json'
-//     },
-//     // We convert the React state to JSON and send it as the POST body
-//     body: JSON.stringify({
-//         category: category,
-//         text: description
-//     })
-// }).then(function (response) {
-//     console.log(response)
-//     return response.json();
-// });
