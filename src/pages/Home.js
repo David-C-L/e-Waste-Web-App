@@ -1,14 +1,24 @@
 import './Home.css';
 import logo from '../images/recycle-logo.png';
 import React, { useState } from 'react';
-import Select from 'react-select';
 import MultiSelect from './MultiSelect'
+import axios from 'axios'
 
 
 function Home() {
 
     const [category, setCategory] = useState([])
     const [description, setDescription] = useState("")
+    const [getReq, setGetReq] = useState({})
+
+    // useEffect(() => {
+    //     // GET request using fetch inside useEffect React hook
+    //     fetch('https://drp21-backend.herokuapp.com/api/v1/posts')
+    //         .then(response => response.json())
+    //         .then(data => setGetReq(data));
+
+    // // empty dependency array means this effect will only run once (like componentDidMount in classes)
+    // }, []);
 
     const ops = [
         { value: 'recycle', label: 'Recycle' },
@@ -17,7 +27,7 @@ function Home() {
     ];
 
     const handleSelectChange = (event) => {
-        setCategory(event)
+        setCategory(event.map(e => e.label).join(", "))
     }
 
     const handleTextChange = (event) => {
@@ -25,9 +35,17 @@ function Home() {
     }
 
     const handleSubmit = (event) => {
-        alert('Post Submitted');
-        console.log(category)
-        console.log(description)
+        //POST method
+        alert('A form was submitted');
+
+        axios.post('https://drp21-backend.herokuapp.com/api/v1/posts', {
+            category: category,
+            text: description
+        }, {
+            'Access-Control-Allow-Origin': '*',
+            'Content-Type': 'text/html; charset=UTF-8'
+        });
+
         event.preventDefault();
     }
     const styles = {
@@ -53,10 +71,8 @@ function Home() {
                     </p>
                 <div>
                     <MultiSelect options={ops} styles={styles} value={category} onChange={handleSelectChange} />
-                    <form onSubmit={handleSubmit}>
-                        <input type="text" onChange={handleTextChange} value={description} />
-                        <input type="submit" value="Post" />
-                    </form>
+                    <input type="text" onChange={handleTextChange} value={description} />
+                    <button type="submit" onClick={handleSubmit}>Post</button>
                 </div>
 
             </header>
@@ -65,3 +81,18 @@ function Home() {
 }
 
 export default Home;
+
+// axois.post('https://drp21-backend.herokuapp.com/api/v1/posts', {
+//     method: 'POST',
+//     headers: {
+//         'Content-Type': 'application/json'
+//     },
+//     // We convert the React state to JSON and send it as the POST body
+//     body: JSON.stringify({
+//         category: category,
+//         text: description
+//     })
+// }).then(function (response) {
+//     console.log(response)
+//     return response.json();
+// });
