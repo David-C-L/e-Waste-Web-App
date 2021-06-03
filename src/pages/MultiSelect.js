@@ -13,6 +13,8 @@ export default function MultiSelect(props) {
       isMulti
       options={props.options}
       styles={props.styles}
+      onChange={props.onChange}
+
     />
   );
 }
