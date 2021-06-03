@@ -27,3 +27,5 @@ production-deployment:
   script:
     - echo "Deploying to production"
     - dpl --provider=heroku --app=drp21 --api-key=$HEROKU_API_KEY
+  only:
+    - master
