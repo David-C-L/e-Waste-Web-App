@@ -9,14 +9,16 @@ function CreatePost(props) {
     const [description, setDescription] = useState("")
 
 
-
-
     const handleSelectChange = (event) => {
         setCategory(event.map(e => e.label).join(", "))
     }
 
     const handleTextChange = (event) => {
         setDescription(event.target.value)
+    }
+
+    const handleCancel = (event) => {
+        props.setCreatePost(false)
     }
 
     const handleSubmit = (event) => {
@@ -56,8 +58,10 @@ function CreatePost(props) {
                 <MultiSelect options={props.ops} styles={styles} value={category} onChange={handleSelectChange} />
             </div>
             <textarea class="PostText" type="text" onChange={handleTextChange} value={description} placeholder="Create Post" />
-            <button class="PostButton" type="submit" onClick={handleSubmit}>Post</button>
-
+            <div className="PostToFeed">
+                <button class="PostButton" type="submit" onClick={handleSubmit}>Post</button>
+                <button class="CancelPost" type="button" onClick={handleCancel}>Cancel</button>
+            </div>
         </div>
     )
 }
