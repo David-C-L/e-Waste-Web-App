@@ -34,8 +34,6 @@ function CreatePost(props) {
         event.preventDefault();
     }
 
-
-
     const styles = {
         option: provided => ({
             ...provided,
@@ -50,13 +48,14 @@ function CreatePost(props) {
             color: 'black'
         })
     }
+
     return (
         <div className="CreatePost">
             <div className="Category">
-                <h3>Select Category</h3>
+                <h3 class="CategoryHeading">Select Category</h3>
                 <MultiSelect options={props.ops} styles={styles} value={category} onChange={handleSelectChange} />
             </div>
-            <textarea class="PostText" type="text" onChange={handleTextChange} value={description} placeholder="Please enter your text" />
+            <textarea class="PostText" type="text" onChange={handleTextChange} value={description} placeholder="Create Post" />
             <button class="PostButton" type="submit" onClick={handleSubmit}>Post</button>
 
         </div>
