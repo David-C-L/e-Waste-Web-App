@@ -6,7 +6,7 @@
     margin: 1ex 0 4ex 0;
 }
 
-.Category {
+.CategorySelection {
     flex-direction: column;
     display: flex;
     width: 20%;

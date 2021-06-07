@@ -1,5 +1,5 @@
 import './Home.css';
-import './CreatePost.css'
+import './CreatePost.css';
 import React, { useState } from 'react';
 import MultiSelect from './MultiSelect'
 import axios from 'axios'
@@ -53,7 +53,7 @@ function CreatePost(props) {
 
     return (
         <div className="CreatePost">
-            <div className="Category">
+            <div className="CategorySelection">
                 <h3 class="CategoryHeading">Select Category</h3>
                 <MultiSelect options={props.ops} styles={styles} value={category} onChange={handleSelectChange} />
             </div>
