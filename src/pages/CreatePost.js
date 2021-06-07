@@ -1,4 +1,5 @@
 import './Home.css';
+import './CreatePost.css'
 import React, { useState } from 'react';
 import MultiSelect from './MultiSelect'
 import axios from 'axios'
@@ -8,18 +9,16 @@ function CreatePost(props) {
     const [description, setDescription] = useState("")
 
 
-    const ops = [
-        { value: 'recycle', label: 'Recycle' },
-        { value: 'reuse', label: 'Reuse' },
-        { value: 'reduce', label: 'Reduce' }
-    ];
-
     const handleSelectChange = (event) => {
         setCategory(event.map(e => e.label).join(", "))
     }
 
     const handleTextChange = (event) => {
         setDescription(event.target.value)
+    }
+
+    const handleCancel = (event) => {
+        props.setCreatePost(false)
     }
 
     const handleSubmit = (event) => {
@@ -37,8 +36,6 @@ function CreatePost(props) {
         event.preventDefault();
     }
 
-
-
     const styles = {
         option: provided => ({
             ...provided,
@@ -53,11 +50,18 @@ function CreatePost(props) {
             color: 'black'
         })
     }
+
     return (
-        <div>
-            <MultiSelect options={ops} styles={styles} value={category} onChange={handleSelectChange} />
-            <input type="text" onChange={handleTextChange} value={description} />
-            <button type="submit" onClick={handleSubmit}>Post</button>
+        <div className="CreatePost">
+            <div className="Category">
+                <h3 class="CategoryHeading">Select Category</h3>
+                <MultiSelect options={props.ops} styles={styles} value={category} onChange={handleSelectChange} />
+            </div>
+            <textarea class="PostText" type="text" onChange={handleTextChange} value={description} placeholder="Create Post" />
+            <div className="PostToFeed">
+                <button class="PostButton" type="submit" onClick={handleSubmit}>Post</button>
+                <button class="CancelPost" type="button" onClick={handleCancel}>Cancel</button>
+            </div>
         </div>
     )
 }

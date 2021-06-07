@@ -1,0 +1,51 @@
+.CreatePost {
+    font-size: 1ex;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    margin: 1ex 0 4ex 0;
+}
+
+.Category {
+    flex-direction: column;
+    display: flex;
+    width: 20%;
+    margin: 0 2% 0 0;
+    font-size: 125%;
+}
+
+.CategoryHeading {
+    font-size: 150%;
+}
+
+.TextButton {
+    width: 50%;
+    text-align: right;
+}
+
+.PostToFeed {
+    direction: flex;
+    flex-direction: column;
+}
+
+.PostButton {
+    width: 90%;
+    margin: 0 0 5% 2%;
+    font-size: 150%;
+    height: 70%;
+}
+
+.PostText {
+    width: 90%;
+    overflow-wrap: break-word;
+    font-size: 125%;
+}
+
+.CancelPost {
+    width: 90%;
+    position: relative;
+    font-size: 150%;
+    right: 0;
+    bottom: 0;
+    margin: 5% 0 0 2%;
+}
