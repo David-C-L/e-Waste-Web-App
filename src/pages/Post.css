@@ -1,0 +1,20 @@
+.Post {
+    border: 2px #0af solid;
+    border-radius: 1ex;
+    margin-bottom: 1ex;
+    background-color: #efefef;
+    color: black;
+}
+
+.Category {
+    font-size: 1.5ex;
+    float: right;
+    border-radius: 1ex;
+    width: min-content;
+    height: min-content;
+    background-color:rgb(140, 209, 1);
+}
+
+.Category-text {
+    margin: 0.5ex;
+}
