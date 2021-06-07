@@ -1,9 +1,9 @@
 import './Home.css';
 import logo from '../images/recycle-logo.png';
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import MultiSelect from './MultiSelect'
 import axios from 'axios'
-
+import Posts from './Posts'
 
 function Home() {
 
@@ -69,36 +69,6 @@ function Home() {
             </header>
         </div>
     );
-}
-function Posts() {
-    const [getReq, setGetReq] = useState({})
-
-    useEffect(() => {
-        // GET request using axios inside useEffect React hook
-        axios.get('https://drp21-backend.herokuapp.com/api/v1/posts')
-            .then(response => setGetReq(response));
-        console.log(getReq)
-    }, []);
-
-    const noteRootStyle = {
-        border: "2px #0af solid",
-        borderRadius: 9,
-        margin: 20,
-        backgroundColor: "#efefef",
-        padding: 6,
-        color: "black"
-    };
-
-    return (
-        <div style={{ width: 400 }}>
-            {getReq.data === undefined ? <div></div> : getReq.data.map(ele =>
-                <div key={ele.id} style={noteRootStyle}>
-                    <h3>{ele.category}</h3>
-                    <p>{ele.text}</p>
-                </div>
-            )}
-        </div>
-    )
 }
 
 export default Home;
