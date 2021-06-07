@@ -8,26 +8,27 @@ function Posts() {
         // GET request using axios inside useEffect React hook
         axios.get('https://drp21-backend.herokuapp.com/api/v1/posts')
             .then(response => setGetReq(response));
-        console.log(getReq)
     }, [getReq]);
 
     const noteRootStyle = {
         border: "2px #0af solid",
-        borderRadius: 10,
-        margin: 10,
+        borderRadius: "1ex",
+        marginBottom: "1ex",
         backgroundColor: "#efefef",
         padding: 2,
-        color: "black",
+        color: "black"
     };
 
     return (
-        <div style={{ width: 400 }}>
-            {getReq.data === undefined ? <div></div> : getReq.data.map(ele =>
-                <div key={ele.id} style={noteRootStyle}>
-                    <h3>{ele.category}</h3>
-                    <p>{ele.text}</p>
-                </div>
-            )}
+        <div>
+            {getReq.data === undefined
+                ? <div></div>
+                : getReq.data.map(ele =>
+                    <div key={ele.id} style={noteRootStyle}>
+                        <h3>{ele.category}</h3>
+                        <p>{ele.text}</p>
+                    </div>
+                )}
         </div>
     )
 }

@@ -9,7 +9,7 @@ function Home() {
 
     const [category, setCategory] = useState([])
     const [description, setDescription] = useState("")
-
+    const [createPost, setCreatePost] = useState(false)
 
     const ops = [
         { value: 'recycle', label: 'Recycle' },
@@ -27,7 +27,7 @@ function Home() {
 
     const handleSubmit = (event) => {
         //POST method
-        alert('A form was submitted');
+        setCreatePost(false)
 
         axios.post('https://drp21-backend.herokuapp.com/api/v1/posts', {
             category: category,
@@ -39,6 +39,11 @@ function Home() {
 
         event.preventDefault();
     }
+
+    const handleCreatePost = (event) => {
+        setCreatePost(true)
+    }
+
     const styles = {
         option: provided => ({
             ...provided,
@@ -56,16 +61,19 @@ function Home() {
     return (
         <div className="Home">
             <header className="Home-header">
-                <img src={logo} className="Home-logo" alt="logo" />
-                <p>
-                    An app to do with sustainability.
-                    </p>
-                <div>
-                    <MultiSelect options={ops} styles={styles} value={category} onChange={handleSelectChange} />
-                    <input type="text" onChange={handleTextChange} value={description} />
-                    <button type="submit" onClick={handleSubmit}>Post</button>
+                <div className="Feed" style={{ width: "80%" }}>
+                    {
+                        createPost
+                            ? <div>
+                                <MultiSelect options={ops} styles={styles} value={category} onChange={handleSelectChange} />
+                                <input type="text" onChange={handleTextChange} value={description} />
+                                <button type="submit" onClick={handleSubmit}>Post</button>
+                            </div>
+                            : <div>
+                                <button className="Button" type="button" onClick={handleCreatePost}>Create new Post!</button>
+                            </div>}
+                    <Posts />
                 </div>
-                <Posts />
             </header>
         </div>
     );

@@ -18,10 +18,9 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  padding-right: "80px";
 }
 
 .Home-link {
@@ -35,4 +34,16 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.Feed {
+  text-align: fixed;
+  left: 5ex;
+  position: relative;
+}
+
+.Button {
+  font-size: 2ex;
+  height: 3ex;
+  margin: 1ex;
 }
