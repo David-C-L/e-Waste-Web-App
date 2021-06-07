@@ -1,4 +1,6 @@
+import './Home.css'
 import React, { useState } from 'react';
+
 
 function SearchPosts(props) {
 
@@ -16,7 +18,7 @@ function SearchPosts(props) {
     return (
         <div className="SearchPosts">
             <button className="CreatePostButton" type="button" onClick={handleCreatePost}>Create new Post!</button>
-            <input className="SearchPost" type="text" onChange={handleTextChange}/>
+            <textarea className="SearchPost" type="text" onChange={handleTextChange} placeholder="Search"/>
             <button className="SearchSubmit" type="submit">Search</button>
         </div>
     )
