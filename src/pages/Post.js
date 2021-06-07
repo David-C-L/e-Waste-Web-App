@@ -1,5 +1,6 @@
 import './Post.css';
 import UserDetails from './UserDetails';
+import PostDetails from './PostDetails';
 
 function Post(props) {
 
@@ -7,6 +8,7 @@ function Post(props) {
         <div key={props.id} className="Post">
             <div className="Left-section">
                 <UserDetails/>
+                <PostDetails/>
             </div>
             <div className="Right-section">
                 <div className="Category">
