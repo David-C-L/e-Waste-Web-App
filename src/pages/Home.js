@@ -7,6 +7,7 @@ import SearchPosts from './SearchPosts';
 function Home() {
 
     const [createPost, setCreatePost] = useState(false)
+    const [getReq, setGetReq] = useState({})
 
     return (
         <div className="Home">
@@ -15,9 +16,9 @@ function Home() {
                     {
                         createPost
                             ? <CreatePost setCreatePost={setCreatePost} />
-                            : <SearchPosts setCreatePost={setCreatePost} />
+                            : <SearchPosts setCreatePost={setCreatePost} getReq={getReq}/>
                     }
-                    <Posts />
+                    <Posts setGetReq={setGetReq} getReq={getReq}/>
                 </div>
             </header>
         </div>

@@ -3,19 +3,19 @@ import axios from 'axios'
 import Post from './Post'
 
 function Posts(props) {
-    const [getReq, setGetReq] = useState({})
+    
 
     useEffect(() => {
         // GET request using axios inside useEffect React hook
         axios.get('https://drp21-backend.herokuapp.com/api/v1/posts')
-            .then(response => setGetReq(response));
-    }, [getReq]);
+            .then(response => props.setGetReq(response));
+    }, [props]);
 
     return (
         <div>
-            {getReq.data === undefined
+            {props.getReq.data === undefined
                 ? <p>No Post... Yet</p>
-                : getReq.data.map(ele => <Post id={ele.id} category={ele.category} text={ele.text} />
+                : props.getReq.data.map(ele => <Post id={ele.id} category={ele.category} text={ele.text} />
                 )}
         </div>
     )
