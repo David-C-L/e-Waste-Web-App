@@ -3,7 +3,10 @@ import './UserDetails.css';
 
 function UserDetails() {
     return (
-        <img src={defaultProfile} className='ProfilePicture'/>
+        <>
+            <img src={defaultProfile} className='ProfilePicture'/>
+            <p className="Username"> Joe Bloggs </p>
+        </>
     );
 }
 
