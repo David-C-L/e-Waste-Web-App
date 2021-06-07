@@ -1,4 +1,5 @@
 import './Home.css';
+import './CreatePost.css'
 import React, { useState } from 'react';
 import MultiSelect from './MultiSelect'
 import axios from 'axios'
@@ -8,11 +9,7 @@ function CreatePost(props) {
     const [description, setDescription] = useState("")
 
 
-    const ops = [
-        { value: 'recycle', label: 'Recycle' },
-        { value: 'reuse', label: 'Reuse' },
-        { value: 'reduce', label: 'Reduce' }
-    ];
+
 
     const handleSelectChange = (event) => {
         setCategory(event.map(e => e.label).join(", "))
@@ -54,10 +51,14 @@ function CreatePost(props) {
         })
     }
     return (
-        <div>
-            <MultiSelect options={ops} styles={styles} value={category} onChange={handleSelectChange} />
-            <input type="text" onChange={handleTextChange} value={description} />
-            <button type="submit" onClick={handleSubmit}>Post</button>
+        <div className="CreatePost">
+            <div className="Category">
+                <h3>Select Category</h3>
+                <MultiSelect options={props.ops} styles={styles} value={category} onChange={handleSelectChange} />
+            </div>
+            <textarea class="PostText" type="text" onChange={handleTextChange} value={description} placeholder="Please enter your text" />
+            <button class="PostButton" type="submit" onClick={handleSubmit}>Post</button>
+
         </div>
     )
 }
