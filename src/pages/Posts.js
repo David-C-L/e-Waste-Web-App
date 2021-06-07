@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios'
+import Post from './Post'
 
 function Posts(props) {
     const [getReq, setGetReq] = useState({})
@@ -10,24 +11,11 @@ function Posts(props) {
             .then(response => setGetReq(response));
     }, [getReq]);
 
-    const noteRootStyle = {
-        border: "2px #0af solid",
-        borderRadius: "1ex",
-        marginBottom: "1ex",
-        backgroundColor: "#efefef",
-        padding: 2,
-        color: "black"
-    };
-
     return (
         <div>
             {getReq.data === undefined
-                ? <div></div>
-                : getReq.data.map(ele =>
-                    <div key={ele.id} style={noteRootStyle}>
-                        <h3>{ele.category}</h3>
-                        <p>{ele.text}</p>
-                    </div>
+                ? <p>No Post... Yet</p>
+                : getReq.data.map(ele => <Post id={ele.id} category={ele.category} text={ele.text} />
                 )}
         </div>
     )
