@@ -1,9 +1,21 @@
 .Post {
-    border: 2px #0af solid;
+    border: 0.25ex #0af solid;
     border-radius: 1ex;
     margin-bottom: 1ex;
     background-color: #efefef;
     color: black;
+    overflow: hidden;
+}
+
+.Left-section {
+    text-align: left;
+    float: left;
+    width: 20%;
+}
+
+.Right-section {
+    float: right;
+    width: 80%;
 }
 
 .Category {
@@ -17,4 +29,16 @@
 
 .Category-text {
     margin: 0.5ex;
+}
+
+.Title {
+    text-align: left;
+    margin: 1ex;
+    width: 80%;
+}
+
+.Post-body {
+    text-align: left;
+    margin: 1ex;
+    font-size: 1ex;
 }
