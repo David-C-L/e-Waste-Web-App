@@ -18,10 +18,9 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  padding-right: "80px";
 }
 
 .Home-link {
@@ -35,4 +34,36 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.Feed {
+  text-align: fixed;
+  left: 5ex;
+  position: relative;
+}
+.SearchPosts {
+  text-align: left;
+  font-size: 16px;
+  margin-left: 0;
+}
+
+
+.CreatePostButton {
+  font-size: 100%;
+  width: 20%;
+  vertical-align: baseline;
+  margin: 1ex 4% 1ex 0;
+}
+
+.SearchPost {
+  font-size: 100%;
+  width: 50%;
+  margin: 1ex 0 1ex 0;
+}
+
+
+.SearchSubmit {
+  font-size: 100%;
+  width: 20%;
+  margin: 1ex 0 1ex 4%;
 }
