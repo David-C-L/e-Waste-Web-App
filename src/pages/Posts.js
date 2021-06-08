@@ -15,7 +15,17 @@ function Posts(props) {
         <div>
             {props.getReq.data === undefined
                 ? <p>No Post... Yet</p>
-                : props.getReq.data.map(ele => <Post id={ele.id} category={ele.category} text={ele.text} />
+                : props.getReq.data.map(ele => 
+                    <Post
+                        id={ele.id} 
+                        category={ele.category} 
+                        title={ele.title}
+                        text={ele.text}
+                        date={ele.date}
+                        time={ele.time}
+                        authorEmail={ele.authorEmail}
+            
+                    />
                 )}
         </div>
     )
