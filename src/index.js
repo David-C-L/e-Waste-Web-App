@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import Home from './pages/Home';
 import LoginPage from './pages/LoginPage';
-import Marketplace from './pages/Marketplace';
+import Marketplace from './pages/MarketPlace/Marketplace';
 import NavBar from './pages/NavBar';
 import reportWebVitals from './reportWebVitals';
 import {BrowserRouter, Route} from 'react-router-dom';
