@@ -1,25 +1,39 @@
-import './Home.css'
-import React, { useState } from 'react';
+import './SearchPosts.css'
+import React from 'react';
 
 
 function SearchPosts(props) {
-
-    const [searchTerm, setSearchTerm] = useState("");
 
     const handleCreatePost = (event) => {
         props.setCreatePost(true)
     }
 
-
     const handleTextChange = (event) => {
-        setSearchTerm(event.target.value)
+        props.setSearchTerm(event.target.value)
+    }
+
+    const search = () => {
+        props.setReload(true)
+        props.filterDisplay()
+    }
+    
+    const cancel = () => {
+        props.setReload(true)
+        props.setSearchTerm("")
     }
 
     return (
         <div className="SearchPosts">
-            <button className="CreatePostButton" type="button" onClick={handleCreatePost}>Create new Post!</button>
-            <textarea className="SearchPost" type="text" onChange={handleTextChange} placeholder="Search"/>
-            <button className="SearchSubmit" type="submit">Search</button>
+            <div className="CreatePostButton">
+                <button className="CreateButton" type="button" onClick={handleCreatePost}>Create new Post!</button>
+            </div>
+            <div className="SearchPost">
+                <textarea className="SearchText" type="text" value={props.searchTerm} onChange={handleTextChange} placeholder="Search" />
+            </div>
+            <div className="SearchSubmit">
+                <button className="Search" type="submit" onClick={search}>Search</button>
+                <button className="Cancel" type="button" onClick={cancel}>Cancel</button>
+            </div>
         </div>
     )
 }

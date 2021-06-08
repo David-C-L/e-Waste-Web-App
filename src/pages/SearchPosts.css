@@ -1,0 +1,47 @@
+
+.SearchPosts {
+    flex-direction: row;
+    display: flex;
+    font-size: 1ex;
+  }
+
+.CreatePostButton {
+    width: 10%;
+    margin: 1% 1% 1% 0%;
+}
+
+.CreateButton {
+    width: 100%;
+    font-size: 150%;
+    height: 100%;
+}
+
+.SearchPost {
+    width: 80%;
+    margin: 1% 1% 1% 1%;    
+}
+
+.SearchText {
+    overflow-wrap: break-word;
+    font-size: 110%;
+    width: 100%;
+    height: 90%;
+}
+
+.SearchSubmit {
+    flex-direction: column;
+    display: flex;
+    width: 10%;
+    margin: 1% 0% 1% 1%;
+}
+
+.Search {
+    height: 60%;
+    font-size: 110%;
+}
+
+.Cancel {
+    height: 40%;
+    font-size: 110%;
+    margin-top: 2%;
+}
