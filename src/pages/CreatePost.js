@@ -1,4 +1,3 @@
-import './Home.css';
 import './CreatePost.css';
 import React, { useState } from 'react';
 import MultiSelect from './MultiSelect'
@@ -7,14 +6,22 @@ import axios from 'axios'
 function CreatePost(props) {
     const [category, setCategory] = useState([])
     const [description, setDescription] = useState("")
-
+    const [title, setTitle] = useState("")
+    
 
     const handleSelectChange = (event) => {
-        setCategory(event.map(e => e.label).join(", "))
+        setCategory(event.map(e => e.label))
+        console.log(category)
     }
 
     const handleTextChange = (event) => {
         setDescription(event.target.value)
+        
+    }
+
+    const handleTitleChange = (event) => {
+        setTitle(event.target.value)
+        
     }
 
     const handleCancel = (event) => {
@@ -26,7 +33,7 @@ function CreatePost(props) {
         props.setCreatePost(false)
 
         axios.post('https://drp21-backend.herokuapp.com/api/v1/posts', {
-            category: category,
+            category: category.join(", "),
             text: description
         }, {
             'Access-Control-Allow-Origin': '*',
@@ -54,13 +61,16 @@ function CreatePost(props) {
     return (
         <div className="CreatePost">
             <div className="CategorySelection">
-                <h3 class="CategoryHeading">Select Category</h3>
+                <h3 className="CategoryHeading">Select Category</h3>
                 <MultiSelect options={props.ops} styles={styles} value={category} onChange={handleSelectChange} />
             </div>
-            <textarea class="PostText" type="text" onChange={handleTextChange} value={description} placeholder="Create Post" />
-            <div className="PostToFeed">
-                <button class="PostButton" type="submit" onClick={handleSubmit}>Post</button>
-                <button class="CancelPost" type="button" onClick={handleCancel}>Cancel</button>
+            <div className="PostBody">
+                <textarea className="PostTitle" type="text" onChange={handleTitleChange} value={title} placeholder="Title"/>
+                <textarea className="PostText" type="text" onChange={handleTextChange} value={description} placeholder="Create Post" />
+            </div>
+            <div className="SubmitButton">
+                <button className="PostButton" type="submit" onClick={handleSubmit}>Post</button>
+                <button className="CancelPost" type="button" onClick={handleCancel}>Cancel</button>
             </div>
         </div>
     )

@@ -3,7 +3,7 @@ import axios from 'axios'
 import Post from './Post'
 
 function Posts(props) {
-    
+
 
     useEffect(() => {
         // GET request using axios inside useEffect React hook
