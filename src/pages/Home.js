@@ -18,14 +18,9 @@ function Home(props) {
         if (searchTerm !== "" && displayPosts.data !== undefined) {
             var tmp = []
             for (let i = 0; i < displayPosts.data.length; i++) {
-                let added = false
-                if (displayPosts.data[i].text !== null && displayPosts.data[i].text.includes(searchTerm)) {
+                if ((displayPosts.data[i].text !== null && displayPosts.data[i].text.includes(searchTerm))
+                    || (displayPosts.data[i].title !== null && displayPosts.data[i].title.includes(searchTerm))) {
                     tmp.push(displayPosts.data[i])
-                    added = true
-                }
-                if (displayPosts.data[i].title !== null && !added && displayPosts.data[i].title.includes(searchTerm)) {
-                    tmp.push(displayPosts.data[i])
-                    // added = true
                 }
             }
             setDisplayPosts({ data: tmp })
