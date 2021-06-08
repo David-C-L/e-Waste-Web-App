@@ -21,8 +21,8 @@ function Posts(props) {
                         category={ele.category} 
                         title={ele.title}
                         text={ele.text}
-                        date={ele.date}
-                        time={ele.time}
+                        date={ele.dateStr}
+                        time={ele.timeStr}
                         authorEmail={ele.authorEmail}
             
                     />
