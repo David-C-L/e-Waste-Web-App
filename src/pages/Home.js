@@ -18,19 +18,20 @@ function Home(props) {
         if (searchTerm !== "" && displayPosts.data !== undefined) {
             var tmp = []
             for (let i = 0; i < displayPosts.data.length; i++) {
-                if (displayPosts.data[i].text !== undefined && displayPosts.data[i].text !== null) {
-                    if (displayPosts.data[i].text.includes(searchTerm)) {
-                        tmp.push(displayPosts.data[i])
-                    }
-                } else if (displayPosts.data[i].title !== undefined && displayPosts.data[i].title !== null) {
-                    if (displayPosts.data[i].title.includes(searchTerm)) {
-                        tmp.push(displayPosts.data[i])
-                    }
+                let added = false
+                if (displayPosts.data[i].text !== null && displayPosts.data[i].text.includes(searchTerm)) {
+                    tmp.push(displayPosts.data[i])
+                    added = true
+                }
+                if (displayPosts.data[i].title !== null && !added && displayPosts.data[i].title.includes(searchTerm)) {
+                    tmp.push(displayPosts.data[i])
+                    // added = true
                 }
             }
-            setDisplayPosts({data: tmp})
+            setDisplayPosts({ data: tmp })
         }
     }
+
 
     function updateDisplay(event) {
         setGetReq(event)
@@ -48,13 +49,11 @@ function Home(props) {
         <div className="Home">
             <header className="Home-header">
                 <div className="Feed" style={{ width: "90%" }}>
-                    {
-                        createPost
-                            ? <CreatePost setReload={setReload} setCreatePost={setCreatePost} ops={ops} />
-                            : <SearchPosts setReload={setReload} filterDisplay={filterDisplay} setSearchTerm={setSearchTerm} setCreatePost={setCreatePost} getReq={getReq} searchTerm={searchTerm}/>
+                    {createPost
+                        ? <CreatePost setReload={setReload} setCreatePost={setCreatePost} ops={ops} />
+                        : <SearchPosts setReload={setReload} filterDisplay={filterDisplay} setSearchTerm={setSearchTerm} setCreatePost={setCreatePost} getReq={getReq} searchTerm={searchTerm} />
                     }
                     <Filter ops={ops} />
-                    {/* <Posts updateDisplay={updateDisplay} setGetReq={setGetReq} getReq={getReq}/> */}
                     <Posts reload={reload} setReload={setReload} updateDisplay={updateDisplay} setGetReq={setGetReq} getReq={displayPosts} />
                 </div>
             </header>
