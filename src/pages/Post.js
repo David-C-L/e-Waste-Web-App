@@ -7,15 +7,15 @@ function Post(props) {
     return (
         <div key={props.id} className="Post">
             <div className="Left-section">
-                <UserDetails/>
-                <PostDetails/>
+                <UserDetails email={props.authorEmail} />
+                <PostDetails date={props.date} time={props.time} />
             </div>
             <div className="Right-section">
                 <div className="Category">
                     <p className="Category-text">{props.category}</p>
                 </div>
-                <h6 className="Title">{props.text}</h6>
-                <p className="Post-body"> This is example text. </p>
+                <h6 className="Title">{props.title}</h6>
+                <p className="Post-body"> {props.text} </p>
             </div>
 
         </div>
