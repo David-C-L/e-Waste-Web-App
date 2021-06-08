@@ -1,8 +1,8 @@
 import './PostDetails.css';
 
-function PostDetails() {
+function PostDetails(props) {
     return (
-        <p className="Date">Mon 7 June 2021</p>
+        <p className="Date">{props.time} {props.date}</p>
     );
 }
 
