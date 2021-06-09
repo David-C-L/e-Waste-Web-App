@@ -1,9 +1,10 @@
+import ListingDetails from './ListingDetails';
 import './Listing.css';
 
 function Listing() {
     return (
         <div className='Listing'>
-            <p>Listing here</p>
+            <ListingDetails />
         </div>
     );
 }

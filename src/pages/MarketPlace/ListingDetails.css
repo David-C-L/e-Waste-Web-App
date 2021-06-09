@@ -1,0 +1,26 @@
+.DefaultListingPicture{
+    width: 80%;
+    margin: 0.5ex;
+    height: 50%;
+}
+
+.Description{
+    margin-top: 0;
+    margin-left: 0.5ex;
+    font-size: 1.5ex;
+    font-weight: 500;
+}
+
+.TimeRemaining{
+    margin-top: 0;
+    margin-left: 0.5ex;
+    font-size: 1.5ex;
+    font-weight: 500;
+}
+
+.MessageOwner{
+    margin-top: 0;
+    margin-left: 0.5ex;
+    font-size: 1.5ex;
+    font-weight: 500;
+} 
