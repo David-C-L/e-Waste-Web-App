@@ -16,7 +16,7 @@ function Posts(props) {
 
     return (
         <div>
-            {props.getReq.data === undefined || props.getReq.data.length == 0
+            {props.getReq.data === undefined || props.getReq.data.length === 0
                 ? <p>No Posts Found</p>
                 : props.getReq.data.map(ele =>
                     <Post
