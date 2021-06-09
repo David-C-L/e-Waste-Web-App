@@ -7,7 +7,7 @@
 
 .CreatePostButton {
     width: 10%;
-    margin: 1% 1% 1% 0%;
+    margin: 1% 1% 1% 1%;
 }
 
 .CreateButton {
@@ -17,8 +17,8 @@
 }
 
 .SearchPost {
-    width: 80%;
-    margin: 1% 1% 1% 1%;    
+    width: 60%;
+    margin: 1% 1% 1% 0%;    
 }
 
 .SearchText {
@@ -32,7 +32,7 @@
     flex-direction: column;
     display: flex;
     width: 10%;
-    margin: 1% 0% 1% 1%;
+    margin: 1% 1% 1% 0%;
 }
 
 .Search {
@@ -44,4 +44,23 @@
     height: 40%;
     font-size: 110%;
     margin-top: 2%;
+}
+
+
+.FilterByCategory {
+    width: 20%;
+    height: 10%;
+    margin: 1% 1% 1% 0%;
+    font-size: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.FilterText {
+    font-size: 90%;
+}
+
+.FilterOptions {
+    height: 90%;
+    font-size: 120%;
 }

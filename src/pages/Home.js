@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 import Posts from './Posts'
 import CreatePost from './CreatePost'
 import SearchPosts from './SearchPosts';
-import Filter from './Filter'
 
 function Home() {
 
@@ -67,10 +66,13 @@ function Home() {
                 <div className="Feed" style={{ width: "90%" }}>
                     {createPost
                         ? <CreatePost setReload={setReload} setCreatePost={setCreatePost} ops={ops} />
-                        : <SearchPosts setReload={setReload} filterDisplay={filterDisplay} setSearchTerm={setSearchTerm} setCreatePost={setCreatePost} getReq={getReq} searchTerm={searchTerm} />
+                        : <>
+                            <SearchPosts ops={ops} setCategoryFilter={setCategoryFilter} categoryFilter={categoryFilter} setReload={setReload} filterDisplay={filterDisplay} setSearchTerm={setSearchTerm} setCreatePost={setCreatePost} getReq={getReq} searchTerm={searchTerm} />
+                        </>
+
                     }
-                    <Filter ops={ops} setCategoryFilter={setCategoryFilter} setReload={setReload} filterDisplay={filterDisplay} categoryFilter={categoryFilter} />
                     {searchTerm !== "" && filtered ? <p>Showing search results for term: {searchTerm}</p> : <div></div>}
+                    {categoryFilter.length !== 0 && filtered ? <p>Showing search results for categor{categoryFilter.length === 1 ? "y" : "ies"}: {categoryFilter.join(", ")}</p> : <div></div>}
                     <Posts reload={reload} setReload={setReload} updateDisplay={updateDisplay} setGetReq={setGetReq} getReq={displayPosts} />
                 </div>
             </header>
