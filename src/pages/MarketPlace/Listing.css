@@ -1,7 +1,53 @@
 .Listing {
     text-align: center;
-    margin-left: 0.5ex;
-    margin-right: 0.5ex;
+    width: 30%;
+    min-height: max-content;
+    margin: 0 0.5ex 0 0.5ex;
     background-color: #0af;
     border-radius: 0.5ex;
+    position: relative;
+    padding-bottom: 3ex;
+}
+
+.DefaultListingPicture {
+    width: 80%;
+    margin: 0.5ex;
+    height: 50%;
+}
+
+.Title {
+    text-align: center;
+    width: 100%;
+    margin: 0 0.5ex 1ex;
+    font-size: 1.5ex;
+    font-weight: 1000;
+    color: #000;
+}
+
+.Description {
+    padding: 0 0.5ex 0;
+    font-size: 1ex;
+    font-weight: 400;
+    border-bottom: ivory;
+    border-width: 1ex;
+    color: #000;
+}
+
+.TimeRemaining {
+    margin: 0;
+    font-size: 1.5ex;
+    font-weight: 500;
+}
+
+.MessageOwner {
+    font-size: 1.5ex;
+    font-weight: 500;
+} 
+
+#bottom {
+    position: absolute;
+    margin: 0;
+    bottom: 1ex;
+    left: 0;
+    right: 0;
 }
