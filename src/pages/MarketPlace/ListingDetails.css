@@ -1,28 +1,32 @@
-.DefaultListingPicture{
+.DefaultListingPicture {
     width: 80%;
     margin: 0.5ex;
     height: 50%;
 }
 
-.Description{
-    margin-top: 0;
-    margin-left: 0.5ex;
+.Title {
+    text-align: center;
+    width: 100%;
+    margin: 0 0 1ex 0;
     font-size: 1.5ex;
     font-weight: 1000;
     color: #000;
 }
 
-.TimeRemaining{
-    margin-top: 0;
-    margin-left: 0.5ex;
+.Description {
+    margin: 0 0 1ex 0;
+    font-size: 1ex;
+    font-weight: 400;
+    color: #000;
+}
+
+.TimeRemaining {
+    margin: 0;
     font-size: 1.5ex;
     font-weight: 500;
 }
 
-.MessageOwner{
-    margin-top: 0;
-    margin-left: 0.5ex;
+.MessageOwner {
     font-size: 1.5ex;
     font-weight: 500;
-    padding: 20px;
 } 

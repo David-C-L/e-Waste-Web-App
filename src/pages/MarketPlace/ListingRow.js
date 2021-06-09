@@ -7,7 +7,6 @@ function ListingRow() {
             <Listing />
             <Listing />
             <Listing />
-            <Listing />
         </div>
     );
 }
