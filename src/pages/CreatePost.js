@@ -11,7 +11,6 @@ function CreatePost(props) {
 
     const handleSelectChange = (event) => {
         setCategory(event.map(e => e.label))
-        console.log(category)
     }
 
     const handleTextChange = (event) => {
@@ -31,6 +30,7 @@ function CreatePost(props) {
     const handleSubmit = (event) => {
         //POST method
         props.setCreatePost(false)
+        props.setReload(true)
 
         axios.post('https://drp21-backend.herokuapp.com/api/v1/posts', {
             category: category.join(", "),
