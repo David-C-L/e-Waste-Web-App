@@ -7,7 +7,7 @@ function ListingDetails() {
         <>
             <img src={defaultProfile} className='DefaultListingPicture'/>
             <p className="Description"> A Lovely Laptop </p>
-            <p className="TimeRemaining"> 2000 seconds </p>
+            <p className="TimeRemaining"> Time Remaining: 2000 seconds </p>
             <Link className='MessageOwner' to='/'>MessageOwner</Link>
         </>
     )
