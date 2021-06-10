@@ -32,4 +32,4 @@ function Comments(props) {
     )
 }
 
-export default Posts;
+export default Comments;
