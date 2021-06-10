@@ -1,3 +1,5 @@
+import './CreateListing.css'
+
 import { useState } from 'react'
 
 
@@ -24,15 +26,15 @@ function CreateListing(props) {
 
 
     return (
-        <div className="CreateListing">
+        <div className="Create">
             <div className="ListingText">
                 <textarea className="ListingTitle" type="text" onChange={handleTitleChange} value={title} placeholder="title" />
                 <textarea className="ListingDescription" type="text" onChange={handleDescriptionChange} value={description} placeholder="description" />
             </div>
 
             <div className="Buttons">
-                <button class="submit" type="submit" onClick={submit}>Submit</button>
-                <button class="cancel" type="submit" onClick={cancel}>Cancel</button>
+                <button className="SubmitList" type="submit" onClick={submit}>Submit</button>
+                <button className="CancelList" type="submit" onClick={cancel}>Cancel</button>
             </div>
         </div>
     )
