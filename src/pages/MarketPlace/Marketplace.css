@@ -1,4 +1,8 @@
 .Market {
+   text-align: center;
+}
+
+.Market-header {
     background-color: #282c34;
     min-height: 100vh;
     display: flex;
@@ -6,4 +10,12 @@
     font-size: calc(10px + 2vmin);
     color: white;
     padding-right: "80px";
+    /* justify-content: center; */
+    align-items: center;
+}
+
+.Container {
+    text-align: fixed;
+    left: 5ex;
+    position: relative;
 }

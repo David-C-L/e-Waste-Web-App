@@ -13,10 +13,12 @@ function Marketplace() {
 
     return (
         <div className='Market'>
-            {/* <div style={{ width: "90%" }}> */}
-                <SearchMarket search={search} setSearch={setSearch} setRefresh={setRefresh}/>
-                <Listings listings={listings} setListings={setListings} setRefresh={setRefresh} refresh={refresh} search={search}/>
-            {/* </div> */}
+            <header className="Market-header">
+                <div className="Conatiner" style={{width: "90%"}}>
+                    <SearchMarket search={search} setSearch={setSearch} setRefresh={setRefresh} />
+                    <Listings listings={listings} setListings={setListings} setRefresh={setRefresh} refresh={refresh} search={search} />
+                </div>
+            </header>
         </div>
     );
 }

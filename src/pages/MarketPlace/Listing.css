@@ -1,8 +1,8 @@
 .Listing {
     text-align: center;
-    width: 30%;
+    width: 33%;
     min-height: max-content;
-    margin: 0 0.5ex 0 0.5ex;
+    margin: 0 1% 0 1%;
     background-color: #0af;
     border-radius: 0.5ex;
     position: relative;
@@ -18,7 +18,7 @@
 .Title {
     text-align: center;
     width: 100%;
-    margin: 0 0.5ex 1ex;
+    margin: 0 1% 1% 1%;
     font-size: 1.5ex;
     font-weight: 1000;
     color: #000;
@@ -29,7 +29,7 @@
     font-size: 1ex;
     font-weight: 400;
     border-bottom: ivory;
-    border-width: 1ex;
+    border-width: 1.5%;
     color: #000;
 }
 
@@ -47,7 +47,7 @@
 #bottom {
     position: absolute;
     margin: 0;
-    bottom: 1ex;
+    bottom: 2%;
     left: 0;
     right: 0;
 }

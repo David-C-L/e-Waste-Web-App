@@ -1,0 +1,17 @@
+.SearchBar {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    font-size: 100%;
+    text-align: center;
+}
+
+.SearchMarket {
+    width: 70%;
+}
+
+.SearchButtons {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+}
