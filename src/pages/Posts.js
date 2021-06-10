@@ -18,7 +18,7 @@ function Posts(props) {
         <div>
             {props.getReq.data === undefined || props.getReq.data.length === 0
                 ? <p>No Posts Found</p>
-                : props.getReq.data.map(ele =>
+                : props.getReq.data.reverse().map(ele =>
                     <Post
                         id={ele.id}
                         category={ele.category}

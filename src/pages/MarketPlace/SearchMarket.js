@@ -21,11 +21,16 @@ function SearchMarket(props) {
         props.setRefresh(true)
     }
 
-    
+    const handleClick = () => {
+        props.setSearchBar(false)
+    }
 
 
     return (
         <div className="SearchBar">
+            <div className="CreateListing">
+                <button className="CreateButton" onClick={handleClick}>Create Listing</button>
+            </div>
             <div className="SearchMarket">
                 <textarea className="SearchText" type="text" value={search} onChange={handleTextChange} placeholder="Search"/>
             </div>
