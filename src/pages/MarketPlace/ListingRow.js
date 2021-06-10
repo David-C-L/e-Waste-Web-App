@@ -2,7 +2,7 @@ import Listing from './Listing';
 import './ListingRow.css';
 
 function ListingRow(props) {
-    console.log("Listings array: " + props.listings.length)
+    // console.log("Listings array: " + props.listings.length)
     return (
         <div className='Row'>
             <>
