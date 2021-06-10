@@ -57,7 +57,8 @@ function Home() {
     const ops = [
         { value: 'recycle', label: 'Recycle' },
         { value: 'reuse', label: 'Reuse' },
-        { value: 'reduce', label: 'Reduce' }
+        { value: 'reduce', label: 'Reduce' },
+        { value: 'repair', label: 'Repair' }
     ];
 
     return (

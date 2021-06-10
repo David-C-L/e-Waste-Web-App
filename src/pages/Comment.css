@@ -1,0 +1,8 @@
+.Comment{
+    border: 0.25ex #42f548 solid;
+    border-radius: 1ex;
+    margin-bottom: 1ex;
+    background-color: #efefef;
+    color: black;
+    overflow: hidden;
+}
