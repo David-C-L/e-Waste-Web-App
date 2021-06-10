@@ -7,7 +7,7 @@ function CreateComment(props) {
 
     const handleTextChange = (event) => {
         setDescription(event.target.value)
-        
+
     }
 
     const handleCancel = () => {
@@ -36,20 +36,20 @@ function CreateComment(props) {
         <div className="CreateComment">
             <div className="CommentBody">
                 <textarea className="CommentText"
-                 type="text"
-                 onChange={handleTextChange} 
-                 value={description} 
-                 placeholder="Create Comment" />
+                    type="text"
+                    onChange={handleTextChange}
+                    value={description}
+                    placeholder="Create Comment" />
             </div>
             <div className="SubmitButton">
-                <button className="CommentButton" 
-                type="submit" 
-                onClick={handleSubmit}>
+                <button className="CommentButton"
+                    type="submit"
+                    onClick={handleSubmit}>
                     Comment
                 </button>
-                <button className="CancelComment" 
-                type="button" 
-                onClick={handleCancel}>
+                <button className="CancelComment"
+                    type="button"
+                    onClick={handleCancel}>
                     Cancel
                 </button>
             </div>
