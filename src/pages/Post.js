@@ -1,13 +1,14 @@
 
-import React, { useState } from 'react';
-import './Post.css';
+import React, { useContext, useState } from 'react';
 import CreateComment from './CreateComment'
 import Comments from './Comments'
 import UserDetails from './UserDetails';
 import PostDetails from './PostDetails';
 import './Post.css';
+import { UserContext } from '../UserContext';
 
 function Post(props) {
+    const { user } = useContext(UserContext);
 
     const [isCollapsed, setIsCollapsed] = useState(true);
     const [reload, setReload] = useState(true)
@@ -47,9 +48,12 @@ function Post(props) {
                 {isCollapsed ?
                     <div /> :
                     <div>
-                        <CreateComment setReload={setReload}
-                            setCreateComment={setCreateComment}
-                            id={props.id} />
+                        {user ? 
+                            <CreateComment setReload={setReload}
+                                setCreateComment={setCreateComment}
+                                id={props.id} />
+                            : <p>Sign in to comment!</p>
+                        }
                         <Comments reload={reload}
                             setReload={setReload}
                             updateDisplay={updateDisplay}

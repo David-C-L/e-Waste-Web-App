@@ -6,6 +6,7 @@ import axios from 'axios';
 
 function CreatePost(props) {
   const { user } = useContext(UserContext);
+  
   const [category, setCategory] = useState([])
   const [description, setDescription] = useState("")
   const [title, setTitle] = useState("")
