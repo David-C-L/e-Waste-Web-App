@@ -18,7 +18,7 @@ function Post(props) {
     }
 
     return (
-        <div>
+        <div className="FullPost">
             <div key={props.id} className="Post">
                 <div className="Left-section">
                     <UserDetails email={props.authorEmail} />
