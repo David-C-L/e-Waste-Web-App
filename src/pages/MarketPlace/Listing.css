@@ -6,13 +6,13 @@
     background-color: #0af;
     border-radius: 0.5ex;
     position: relative;
-    padding-bottom: 3ex;
+    padding-bottom: 5ex;
 }
 
 .DefaultListingPicture {
-    width: 80%;
+    width: 90%;
     margin: 0.5ex;
-    height: 50%;
+    height: auto;
 }
 
 .Title {
@@ -35,7 +35,7 @@
 
 .TimeRemaining {
     margin: 0;
-    font-size: 1.5ex;
+    font-size: 1.1ex;
     font-weight: 500;
 }
 
