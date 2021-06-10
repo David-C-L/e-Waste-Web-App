@@ -7,13 +7,16 @@ import Marketplace from './pages/MarketPlace/Marketplace';
 import NavBar from './pages/NavBar';
 import reportWebVitals from './reportWebVitals';
 import {BrowserRouter, Route} from 'react-router-dom';
+import { UserContext } from './UserContext';
 
 ReactDOM.render(
   <BrowserRouter>
     <NavBar/>
-    <Route exact path='/' component={Home} />
-    <Route exact path='/market' component={Marketplace} />
-    <Route exact path='/login' component={LoginPage} />
+    <UserContext.Provider>
+      <Route exact path='/' component={Home} />
+      <Route exact path='/market' component={Marketplace} />
+      <Route exact path='/login' component={LoginPage} />
+    </UserContext.Provider>
   </BrowserRouter>,
   document.getElementById('root')
 );
