@@ -8,7 +8,7 @@ function Comments(props) {
     useEffect(() => {
         if (props.reload) {
             // GET request using axios inside useEffect React hook
-            axios.get('https://drp21-backend.herokuapp.com/api/v1/posts')
+            axios.get(`https://drp21-backend.herokuapp.com/api/v1/posts/${props.id}`)
                 .then(response => props.updateDisplay(response));
         } 
         props.setReload(false)
@@ -16,9 +16,11 @@ function Comments(props) {
 
     return (
         <div>
-            {props.getReq.data === undefined || props.getReq.data.length === 0
-                ? <p>No Comments Found /n Be the first to comment!</p>
-                : props.getReq.data.map(ele =>
+            {props.getReq.comments === undefined || props.getReq.comments.length === 0
+                ? <div className="No-comments">
+                    <p>No Comments Found <br/> Be the first to comment!</p>
+                  </div>
+                : props.getReq.comments.map(ele =>
                     <Comment
                         id={ele.id}
                         text={ele.text}
