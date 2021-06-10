@@ -56,3 +56,22 @@
     bottom: 0;
     font-size: 70%;
 }
+
+.Login {
+  position: relative;
+  display: flex;
+  margin: 2ex;
+}
+
+.LoginText {
+  width: 70%;
+  margin: 0;
+}
+
+.Return {
+  margin-top: 0.5ex;
+  height: 30%;
+  width: 20%;
+  position: relative;
+  font-size: 70%;
+}

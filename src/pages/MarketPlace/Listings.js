@@ -29,6 +29,7 @@ function Listings(props) {
         props.setRefresh(false)
     }, [props]);
 
+
     return (
         <div className="Listings">
             { props.listings === null || props.listings === undefined

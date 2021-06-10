@@ -1,10 +1,11 @@
 import './CreateListing.css'
-
-import { useState } from 'react'
+import { useState, useContext } from 'react'
 import axios from 'axios'
-
+import { UserContext } from '../../UserContext';
 
 function CreateListing(props) {
+
+    const { user } = useContext(UserContext);
 
     const [title, setTitle] = useState("")
     const [description, setDescription] = useState("")
@@ -22,20 +23,25 @@ function CreateListing(props) {
         setDateTime(event.target.value + ":00")
     }
 
+    const handleCancel = (event) => {
+        props.setSearchBar(true)
+    }
+
     const submit = (event) => {
-        props.setRefresh(true)
         props.setSearchBar(true)
 
         axios.post('https://drp21-backend.herokuapp.com/api/v1/listings', {
             title: title,
             description: description,
             availableUntil: dateTime,
-            owner: "joe@bloggs.com"
+            owner: user.email
         }, {
             'Access-Control-Allow-Origin': '*',
             'Content-Type': 'text/html; charset=UTF-8'
         });
 
+        
+        props.setRefresh(true)
         event.preventDefault();
     }
 
@@ -45,21 +51,27 @@ function CreateListing(props) {
 
 
     return (
-        <div className="Create">
-            <div className="ListingFields">
-                <div className="ListingTop">
-                    <textarea className="ListingTitle" type="text" onChange={handleTitleChange} value={title} placeholder="title" />
-                    <input className="DateTime" type="datetime-local" onChange={handleDateTimeChange} />
+        user ?
+            <div className="Create">
+                <div className="ListingFields">
+                    <div className="ListingTop">
+                        <textarea className="ListingTitle" type="text" onChange={handleTitleChange} value={title} placeholder="title" />
+                        <input className="DateTime" type="datetime-local" onChange={handleDateTimeChange} />
+                    </div>
+                    <div className="ListingBottom">
+                        <textarea className="ListingDescription" type="text" onChange={handleDescriptionChange} value={description} placeholder="description" />
+                    </div>
                 </div>
-                <div className="ListingBottom">
-                    <textarea className="ListingDescription" type="text" onChange={handleDescriptionChange} value={description} placeholder="description" />
+                <div className="Buttons">
+                    <button className="SubmitList" type="submit" onClick={submit}>Submit</button>
+                    <button className="CancelList" type="submit" onClick={cancel}>Cancel</button>
                 </div>
             </div>
-            <div className="Buttons">
-                <button className="SubmitList" type="submit" onClick={submit}>Submit</button>
-                <button className="CancelList" type="submit" onClick={cancel}>Cancel</button>
+            :
+            <div className='Login'>
+                <h3 className='LoginText'> Please log in to create a post. </h3>
+                <button className="Return" type="button" onClick={handleCancel}>Return</button>
             </div>
-        </div>
     )
 }
 
