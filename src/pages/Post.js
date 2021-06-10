@@ -1,6 +1,6 @@
-import './Post.css';
 import UserDetails from './UserDetails';
 import PostDetails from './PostDetails';
+import './Post.css';
 
 function Post(props) {
 
@@ -14,8 +14,8 @@ function Post(props) {
                 <div className="Category">
                     <p className="Category-text">{props.category}</p>
                 </div>
-                <h6 className="Title">{props.title}</h6>
-                <p className="Post-body"> {props.text} </p>
+                <p className='Title'>{props.title}</p>
+                <p className="Post-body">{props.text} </p>
             </div>
 
         </div>

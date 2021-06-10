@@ -36,7 +36,8 @@ function CreatePost(props) {
     axios.post('https://drp21-backend.herokuapp.com/api/v1/posts', {
       category: category.join(", "),
       title: title,
-      text: description
+      text: description,
+      author: user.email
     }, {
       'Access-Control-Allow-Origin': '*',
       'Content-Type': 'text/html; charset=UTF-8'
