@@ -20,8 +20,6 @@ function Listings() {
             .then(response => setListings(response.data));
     }, [listings]);
 
-    console.log(splitArray(listings, 3));
-
     return (
         <div className="Listings">
         { listings === null || listings === undefined
