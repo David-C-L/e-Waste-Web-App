@@ -5,17 +5,26 @@
     background-color: #efefef;
     color: black;
     overflow: hidden;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
 }
 
 .Left-section {
     text-align: left;
-    float: left;
     width: 20%;
 }
 
+.Center-section {
+    width: 65%;
+}
+
 .Right-section {
-    float: right;
-    width: 80%;
+    width: 15%;
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+    position: relative;
 }
 
 .Comment-section {
@@ -27,17 +36,22 @@
 .Comment-button {
     font-size: 1.5ex;
     border-radius: 1ex;
-    position: relative;
-    float: right;
+    position: absolute;
+    bottom: 0;
+    right: 0;
     width: min-content;
     height: min-content;
     background-color:rgb(140, 209, 1);
+    width: 100%;
 }
 
 .Category {
     font-size: 1.5ex;
-    float: right;
+    align-items: flex-end;
     border-radius: 1ex;
+    position: absolute;
+    right: 0;
+    top: 0;
     width: min-content;
     height: min-content;
     background-color:rgb(140, 209, 1);
