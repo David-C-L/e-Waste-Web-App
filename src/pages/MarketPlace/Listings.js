@@ -9,6 +9,14 @@ function splitArray(array, groupSize) {
         .map((_, i) => array.slice(i * groupSize, (i + 1) * groupSize));
 }
 
+function filter(listings, search) {
+    if (search !== "") {
+        return listings.filter(e => e.title.toLowerCase().includes(search.toLowerCase())
+            || e.description.toLowerCase().includes(search.toLowerCase()))
+    }
+    return listings
+}
+
 function Listings(props) {
 
     //TODO: GET request to fetch listings and display
@@ -27,7 +35,7 @@ function Listings(props) {
         <div className="Listings">
             { props.listings === null || props.listings === undefined
                 ? <p> No Listings </p>
-                : splitArray(props.listings, 3).map(listingGroup =>
+                : splitArray(filter(props.listings, props.search), 3).map(listingGroup =>
                     <ListingRow listings={listingGroup} />)
             }
         </div>
