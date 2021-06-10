@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom'
 
 
 function Listing(props) {
-    console.log("listing: " + props.listing)
     return (
         <div className='Listing'>
             <img src={defaultListing} className='DefaultListingPicture' />
@@ -12,7 +11,8 @@ function Listing(props) {
             <p className="Description"> {props.listing.description} </p>
             <div id='bottom'>
                 <p className="TimeRemaining"> {props.listing.timeRemaining} </p>
-                <Link className='MessageOwner' to='/'>Message the owner</Link>
+                <p className="TimeRemaining"> {props.listing.ownerEmail} </p>
+                {/* <Link className='MessageOwner' to='/'>Message the owner</Link> */}
             </div>
         </div>
     );
