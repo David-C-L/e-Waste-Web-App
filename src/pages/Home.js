@@ -74,7 +74,11 @@ function Home() {
                     }
                     {searchTerm !== "" && filtered ? <p>Showing search results for term: {searchTerm}</p> : <div></div>}
                     {categoryFilter.length !== 0 && filtered ? <p>Showing search results for categor{categoryFilter.length === 1 ? "y" : "ies"}: {categoryFilter.join(", ")}</p> : <div></div>}
-                    <Posts reload={reload} setReload={setReload} updateDisplay={updateDisplay} setGetReq={setGetReq} getReq={displayPosts} />
+                    <Posts reload={reload}
+                        setReload={setReload}
+                        updateDisplay={updateDisplay}
+                        setGetReq={setGetReq} 
+                        getReq={displayPosts} />
                 </div>
             </header>
         </div>

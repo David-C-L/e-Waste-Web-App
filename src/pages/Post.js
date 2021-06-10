@@ -7,6 +7,15 @@ import PostDetails from './PostDetails';
 function Post(props) {
 
     const [isCollapsed, setIsCollapsed] = useState(true);
+    const [reload, setReload] = useState(true)
+    const [createComment, setCreateComment] = useState(false)
+    const [getReq, setGetReq] = useState({})
+    const [displayComments, setDisplayComments] = useState([])
+
+    function updateDisplay(event) {
+        setGetReq(event)
+        setDisplayComments(event)
+    }
 
     return (
         <div>
@@ -19,18 +28,28 @@ function Post(props) {
                     <div className="Category">
                         <p className="Category-text">{props.category}</p>
                     </div>
+                    <h6 className="Title">{props.title}</h6>
+                    <p className="Post-body"> {props.text} </p>
                     <button className="Comment-button"
                         onClick={() => setIsCollapsed(!isCollapsed)}>
                         {isCollapsed ? 'Show' : 'Hide'} Comments
                     </button>
-                    <h6 className="Title">{props.title}</h6>
-                    <p className="Post-body"> {props.text} </p>
                 </div>
 
             </div>
 
             <div className="Comment-section">
-                {isCollapsed ? <div/> : <Comments/>}
+                {isCollapsed ?
+                    <div /> :
+                    <div>
+                        {/* <CreateComment setReload={setReload}
+                            setCreateComment={setCreateComment} /> */}
+                        <Comments reload={reload}
+                            setReload={setReload}
+                            updateDisplay={updateDisplay}
+                            setGetReq={setGetReq}
+                            getReq={displayComments} />
+                    </div>}
             </div>
         </div>
 
