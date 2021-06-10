@@ -54,7 +54,8 @@ function Post(props) {
                             updateDisplay={updateDisplay}
                             setGetReq={setGetReq}
                             getReq={displayComments}
-                            id={props.id} />
+                            id={props.id}
+                            comments={props.comments} />
                     </div>}
             </div>
         </div>

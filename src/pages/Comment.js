@@ -8,10 +8,10 @@ function Comment(props) {
         <div key={props.id} className="Comment">
             <div className="Left-section">
                 <UserDetails email={props.authorEmail} />
-                <PostDetails date={props.date} time={props.time} />
+                <PostDetails dateTime={props.dateTime} />
             </div>
             <div className="Right-section">
-                <p className="Comment-body"> {props.text} </p>
+                <p className="Comment-body"> {props.body} </p>
             </div>
 
         </div>

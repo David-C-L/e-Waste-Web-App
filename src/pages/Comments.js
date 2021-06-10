@@ -16,16 +16,15 @@ function Comments(props) {
 
     return (
         <div>
-            {props.getReq.comments === undefined || props.getReq.comments.length === 0
+            {props.getReq.data === undefined || props.getReq.data.comments.length === 0
                 ? <div className="No-comments">
                     <p>No Comments Found <br/> Be the first to comment!</p>
                   </div>
-                : props.getReq.comments.map(ele =>
+                : props.getReq.data.comments.map(ele =>
                     <Comment
                         id={ele.id}
-                        text={ele.text}
-                        date={ele.dateStr}
-                        time={ele.timeStr}
+                        body={ele.body}
+                        dateTime={ele.datePosted}
                         authorEmail={ele.authorEmail}
 
                     />

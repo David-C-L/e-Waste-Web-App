@@ -14,6 +14,7 @@ function Posts(props) {
         props.setReload(false)
     }, [props]);
 
+    console.log(props.getReq)
     return (
         <div>
             {props.getReq.data === undefined || props.getReq.data.length === 0
@@ -27,7 +28,7 @@ function Posts(props) {
                         date={ele.dateStr}
                         time={ele.timeStr}
                         authorEmail={ele.authorEmail}
-
+                        comments={ele.comments}
                     />
                 )}
         </div>

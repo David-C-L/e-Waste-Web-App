@@ -10,14 +10,14 @@ function CreateComment(props) {
         
     }
 
-    const handleCancel = (event) => {
+    const handleCancel = () => {
+        setDescription("")
         props.setCreateComment(false)
     }
 
     const handleSubmit = (event) => {
         //POST method
         props.setCreateComment(false)
-        props.setReload(true)
 
         axios.post(`https://drp21-backend.herokuapp.com/api/v1/comments`, {
             post: props.id,
@@ -28,6 +28,7 @@ function CreateComment(props) {
             'Content-Type': 'text/html; charset=UTF-8'
         });
 
+        props.setReload(true)
         event.preventDefault();
     }
 
@@ -49,7 +50,7 @@ function CreateComment(props) {
                 <button className="CancelComment" 
                 type="button" 
                 onClick={handleCancel}>
-                    Comment
+                    Cancel
                 </button>
             </div>
         </div>
