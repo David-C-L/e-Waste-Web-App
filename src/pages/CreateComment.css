@@ -1,0 +1,39 @@
+.CreateComment {
+    display: flex;
+    flex-direction: row;
+    margin: 1% 0% 2% 0%;
+    width: 100%;
+}
+
+
+.CommentBody {
+    width: 80%;
+    margin: 0% 1% 0% 0%;
+}
+
+.CommentText {
+    width: 100%;
+    height: 100%;
+}
+
+
+.SubmitButtons {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin: 0% 1% 0% 0%;
+    width: 20%;
+}
+
+.CommentButton {
+    width: 100%;
+    margin: 0% 0% 1% 0%;
+}
+
+.CancelButton {
+    position: absolute;
+    bottom: 0;
+    margin: 1% 0% 0% 0%;
+    width: 100%;
+}
+

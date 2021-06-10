@@ -57,7 +57,8 @@ function Home() {
     const ops = [
         { value: 'recycle', label: 'Recycle' },
         { value: 'reuse', label: 'Reuse' },
-        { value: 'reduce', label: 'Reduce' }
+        { value: 'reduce', label: 'Reduce' },
+        { value: 'repair', label: 'Repair' }
     ];
 
     return (
@@ -73,7 +74,11 @@ function Home() {
                     }
                     {searchTerm !== "" && filtered ? <p>Showing search results for term: {searchTerm}</p> : <div></div>}
                     {categoryFilter.length !== 0 && filtered ? <p>Showing search results for categor{categoryFilter.length === 1 ? "y" : "ies"}: {categoryFilter.join(", ")}</p> : <div></div>}
-                    <Posts reload={reload} setReload={setReload} updateDisplay={updateDisplay} setGetReq={setGetReq} getReq={displayPosts} />
+                    <Posts reload={reload}
+                        setReload={setReload}
+                        updateDisplay={updateDisplay}
+                        setGetReq={setGetReq} 
+                        getReq={displayPosts} />
                 </div>
             </header>
         </div>

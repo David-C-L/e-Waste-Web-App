@@ -1,0 +1,24 @@
+.Comment{
+    border: 0.25ex #42f548 solid;
+    border-radius: 1ex;
+    margin-bottom: 1ex;
+    background-color: #efefef;
+    color: black;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+}
+
+.Left-section {
+    width: 20%;
+}
+
+.Right-section {
+    width: 80%;
+}
+
+.Comment-body {
+    text-align: left;
+    margin: 1ex;
+    font-size: 1ex;
+}
