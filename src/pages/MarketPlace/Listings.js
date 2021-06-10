@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import ListingRow from './ListingRow';
 import axios from 'axios';
 
@@ -28,8 +28,6 @@ function Listings(props) {
         }
         props.setRefresh(false)
     }, [props]);
-
-    // console.log(splitArray(props.listings, 3));
 
     return (
         <div className="Listings">

@@ -1,6 +1,5 @@
 import './Listing.css';
 import defaultListing from '../../images/laptop.jpg';
-import { Link } from 'react-router-dom'
 
 
 function Listing(props) {
