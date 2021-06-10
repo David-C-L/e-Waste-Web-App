@@ -3,6 +3,7 @@ import defaultListing from '../../images/laptop.jpg';
 
 
 function Listing(props) {
+
     return (
         <div className='Listing'>
             <img src={defaultListing} className='DefaultListingPicture' />
