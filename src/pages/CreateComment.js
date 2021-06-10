@@ -17,6 +17,7 @@ function CreateComment(props) {
 
     const handleSubmit = (event) => {
         //POST method
+        setDescription("")
         props.setCreateComment(false)
 
         axios.post(`https://drp21-backend.herokuapp.com/api/v1/comments`, {
@@ -41,7 +42,7 @@ function CreateComment(props) {
                     value={description}
                     placeholder="Create Comment" />
             </div>
-            <div className="SubmitButton">
+            <div className="SubmitButtons">
                 <button className="CommentButton"
                     type="submit"
                     onClick={handleSubmit}>

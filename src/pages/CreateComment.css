@@ -1,8 +1,7 @@
 .CreateComment {
     display: flex;
     flex-direction: row;
-    position: relative;
-    margin: 1% 0% 1% 0%;
+    margin: 1% 0% 2% 0%;
     width: 100%;
 }
 
@@ -18,11 +17,12 @@
 }
 
 
-.SubmitButton {
+.SubmitButtons {
     display: flex;
     flex-direction: column;
+    position: relative;
     margin: 0% 1% 0% 0%;
-    width: 30%;
+    width: 20%;
 }
 
 .CommentButton {
@@ -31,6 +31,8 @@
 }
 
 .CancelButton {
+    position: absolute;
+    bottom: 0;
     margin: 1% 0% 0% 0%;
     width: 100%;
 }
