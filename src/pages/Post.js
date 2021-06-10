@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './Post.css';
+import CreateComment from './CreateComment'
 import Comments from './Comments'
 import UserDetails from './UserDetails';
 import PostDetails from './PostDetails';
@@ -45,8 +46,9 @@ function Post(props) {
                 {isCollapsed ?
                     <div /> :
                     <div>
-                        {/* <CreateComment setReload={setReload}
-                            setCreateComment={setCreateComment} /> */}
+                        <CreateComment setReload={setReload}
+                            setCreateComment={setCreateComment}
+                            id={props.id}/>
                         <Comments reload={reload}
                             setReload={setReload}
                             updateDisplay={updateDisplay}
