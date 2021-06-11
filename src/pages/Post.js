@@ -26,7 +26,7 @@ function Post(props) {
             <div key={props.id} className="Post">
                 <div className="Left-section-post">
                     <UserDetails email={props.authorEmail} />
-                    <PostDetails date={props.date} time={props.time} />
+                    <PostDetails dateTime={[props.time, <br/>, props.date]} />
                 </div>
 
                 <div className="Center-section-post">
