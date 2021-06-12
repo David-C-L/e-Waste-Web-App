@@ -32,8 +32,8 @@ function CreateComment(props) {
             'Content-Type': 'text/html; charset=UTF-8'
         });
 
-        props.setReload(true)
         event.preventDefault();
+        props.setReload(true);
     }
 
     return (
