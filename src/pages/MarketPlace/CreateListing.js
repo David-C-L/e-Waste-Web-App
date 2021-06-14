@@ -10,7 +10,6 @@ function CreateListing(props) {
     const [title, setTitle] = useState("");
     const [description, setDescription] = useState("");
     const [dateTime, setDateTime] = useState("");
-    const [listingId, setListingId] = useState(null);
     const [imagesToUpload, setImagesToUpload] = useState([]);
 
     const handleTitleChange = (event) => {
@@ -26,10 +25,7 @@ function CreateListing(props) {
     }
 
     const handleFileSelected = event => {
-      console.log('event.target.files: ' + event.target.files)
-      console.log('event.target.files[0]: ' + event.target.files[0])
       setImagesToUpload(event.target.files);
-      console.log('imagesToUpload: ' + imagesToUpload);
     }
 
     const handleCancel = (event) => {
@@ -52,12 +48,10 @@ function CreateListing(props) {
         })
         .then(response => {
           id = response.data.id;
-          console.log('response id: ' + response.data.id);
 
           for (var i = 0; i < imagesToUpload.length; i++) {
               const fd = new FormData();
               fd.append('photo', imagesToUpload[i]);
-              console.log('images to upload: ' + imagesToUpload[i]);
               fd.append('listing', id);
 
               axios.post('https://drp21-backend.herokuapp.com/api/v1/uploadPhoto', fd, {
@@ -66,16 +60,6 @@ function CreateListing(props) {
               .then(response => console.log(response.data));
           }
         });
-
-
-
-        // if (imagesToUpload.length == 1) {
-        //   url = 'https://drp21-backend.herokuapp.com/api/v1/uploadPhoto';
-        // } else if (imagesToUpload.length > 1) {
-        //   url = 'https://drp21-backend.herokuapp.com/api/v1/uploadMultiplePhotos';
-        // }
-
-
 
         props.setRefresh(true)
         event.preventDefault();
