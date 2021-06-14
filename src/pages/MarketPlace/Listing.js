@@ -1,7 +1,6 @@
 import './Listing.css';
 import defaultListing from '../../images/laptop.jpg';
 
-
 function Listing(props) {
 
     return (

@@ -7,9 +7,11 @@ function CreateListing(props) {
 
     const { user } = useContext(UserContext);
 
-    const [title, setTitle] = useState("")
-    const [description, setDescription] = useState("")
-    const [dateTime, setDateTime] = useState("")
+    const [title, setTitle] = useState("");
+    const [description, setDescription] = useState("");
+    const [dateTime, setDateTime] = useState("");
+    const [listingId, setListingId] = useState(null);
+    const [imagesToUpload, setImagesToUpload] = useState([]);
 
     const handleTitleChange = (event) => {
         setTitle(event.target.value)
@@ -21,6 +23,10 @@ function CreateListing(props) {
 
     const handleDateTimeChange = (event) => {
         setDateTime(event.target.value + ":00")
+    }
+
+    const handleFileSelected = event => {
+      setImagesToUpload(event.target.files);
     }
 
     const handleCancel = (event) => {
@@ -38,9 +44,22 @@ function CreateListing(props) {
         }, {
             'Access-Control-Allow-Origin': '*',
             'Content-Type': 'text/html; charset=UTF-8'
-        });
+        })
+        .then(response => setListingId(response.data.id));
 
-        
+        const fd = new FormData();
+        fd.append('photos', imagesToUpload);
+        fd.append('listing', listingId);
+
+        // if (imagesToUpload.length == 1) {
+        //   url = 'https://drp21-backend.herokuapp.com/api/v1/uploadPhoto';
+        // } else if (imagesToUpload.length > 1) {
+        //   url = 'https://drp21-backend.herokuapp.com/api/v1/uploadMultiplePhotos';
+        // }
+
+        axios.post('https://drp21-backend.herokuapp.com/api/v1/uploadMultiplePhotos', fd)
+        .then(response => console.log(response.data));
+
         props.setRefresh(true)
         event.preventDefault();
     }
@@ -60,6 +79,10 @@ function CreateListing(props) {
                     </div>
                     <div className="ListingBottom">
                         <textarea className="ListingDescription" type="text" onChange={handleDescriptionChange} value={description} placeholder="description" />
+                        <div className="UploadSection">
+                          <label for="photoUpload"> Upload Photos: </label> <br/><br/>
+                          <input id="photoUpload" type="file" multiple onChange={handleFileSelected} />
+                        </div>
                     </div>
                 </div>
                 <div className="Buttons">
