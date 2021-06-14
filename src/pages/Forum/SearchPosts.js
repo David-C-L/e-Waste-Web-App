@@ -1,6 +1,6 @@
 import './SearchPosts.css'
 import React, { useState } from 'react';
-import MultiSelect from './MultiSelect'
+import MultiSelect from '../MultiSelect'
 
 
 function SearchPosts(props) {

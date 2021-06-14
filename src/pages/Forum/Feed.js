@@ -1,10 +1,10 @@
-import './Home.css';
+import './Feed.css';
 import React, { useState } from 'react';
 import Posts from './Posts'
 import CreatePost from './CreatePost'
 import SearchPosts from './SearchPosts';
 
-function Home() {
+function Feed() {
 
     const [reload, setReload] = useState(true)
     const [createPost, setCreatePost] = useState(false)
@@ -62,9 +62,9 @@ function Home() {
     ];
 
     return (
-        <div className="Home">
-            <header className="Home-header">
-                <div className="Feed" style={{ width: "90%" }}>
+        <div className="Feed">
+            <header className="Feed-header">
+                <div className="Forum" style={{ width: "90%" }}>
                     {createPost
                         ? <CreatePost setReload={setReload} setCreatePost={setCreatePost} ops={ops} />
                         : <>
@@ -85,4 +85,4 @@ function Home() {
     );
 }
 
-export default Home;
+export default Feed;

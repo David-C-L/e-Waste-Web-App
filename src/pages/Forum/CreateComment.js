@@ -1,7 +1,7 @@
 import './CreateComment.css';
 import React, { useContext, useState } from 'react';
 import axios from 'axios'
-import { UserContext } from '../UserContext';
+import { UserContext } from '../../UserContext';
 
 function CreateComment(props) {
     const { user } = useContext(UserContext);

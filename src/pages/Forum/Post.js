@@ -5,7 +5,7 @@ import Comments from './Comments'
 import UserDetails from './UserDetails';
 import PostDetails from './PostDetails';
 import './Post.css';
-import { UserContext } from '../UserContext';
+import { UserContext } from '../../UserContext';
 
 function Post(props) {
     const { user } = useContext(UserContext);

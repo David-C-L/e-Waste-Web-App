@@ -1,7 +1,7 @@
 import './CreatePost.css';
 import React, { useContext, useState } from 'react';
-import MultiSelect from './MultiSelect';
-import { UserContext } from '../UserContext';
+import MultiSelect from '../MultiSelect';
+import { UserContext } from '../../UserContext';
 import axios from 'axios';
 
 function CreatePost(props) {

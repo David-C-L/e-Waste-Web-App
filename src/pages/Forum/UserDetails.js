@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import defaultProfile from '../images/default-profile-picture.jpg';
+import defaultProfile from '../../images/default-profile-picture.jpg';
 import './UserDetails.css';
 
 function UserDetails(props) {
