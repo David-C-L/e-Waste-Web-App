@@ -3,8 +3,9 @@
 }
 
 .Home-logo {
-  height: 30vmin;
+  height: 25vmin;
   pointer-events: none;
+  margin-top: 5%;
 }
 
 @media (prefers-reduced-motion: no-preference) {

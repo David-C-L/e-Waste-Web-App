@@ -1,15 +1,38 @@
 import './Home.css';
 import React, { useState } from 'react';
 import logo from '../../images/recycle-logo.png'
+import { useHistory } from "react-router-dom";
 
 function Home() {
+
+    const history = useHistory();
+
+    const routeChangeMarketplace = () => {
+        let path = `market`;
+        history.push(path);
+    }
+
+    const routeChangeRepairForum = () => {
+        let path = `feed`;
+        history.push(path);
+    }
+
+    const routeChangeLogin = () => {
+        let path = `login`;
+        history.push(path);
+    }
 
     return (
         <div className="Home">
             <header className="Home-header">
                 <div className="HomeContainer" style={{ width: "90%" }}>
-                    <p>This is some text!</p>
                     <img src={logo} className="Home-logo" alt="logo" />
+                    <p>ReusingElectronicsAndOtherStuff</p>
+                    <div className="Home-redirects">
+                        <button onClick={routeChangeMarketplace}>Marktplace</button>
+                        <button onClick={routeChangeRepairForum}>Repair Forum</button>
+                        <button onClick={routeChangeLogin}>Login</button>
+                    </div>
                 </div>
             </header>
         </div>
