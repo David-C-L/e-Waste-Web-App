@@ -29,9 +29,9 @@ function Home() {
                     <img src={logo} className="Home-logo" alt="logo" />
                     <p>ReusingElectronicsAndOtherStuff</p>
                     <div className="Home-redirects">
-                        <button onClick={routeChangeMarketplace}>Marktplace</button>
-                        <button onClick={routeChangeRepairForum}>Repair Forum</button>
-                        <button onClick={routeChangeLogin}>Login</button>
+                        <button className="Home-btn" onClick={routeChangeMarketplace}>Marktplace</button>
+                        <button className="Home-btn" onClick={routeChangeRepairForum}>Repair Forum</button>
+                        <button className="Home-btn" onClick={routeChangeLogin}>Login</button>
                     </div>
                 </div>
             </header>

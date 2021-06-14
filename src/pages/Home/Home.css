@@ -5,7 +5,7 @@
 .Home-logo {
   height: 25vmin;
   pointer-events: none;
-  margin-top: 5%;
+  margin-top: 5vmin;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -16,12 +16,14 @@
 
 .Home-header {
   background-color: #282c34;
-  min-height: 100vh;
   display: flex;
+  min-height: 100vh;
   flex-direction: column;
   font-size: calc(10px + 2vmin);
   color: white;
   padding-right: "80px";
+  overflow: hidden;
+
 }
 
 .Home-link {
@@ -40,10 +42,23 @@
 .HomeContainer {
   text-align: fixed;
   left: 5ex;
+  height: 100%;
   position: relative;
+  min-height: 60vh;
 }
 
+.Home-redirects {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  height: 100%;
+}
 
-
-
-
+.Home-btn {
+  border-radius: 20%;
+  width: 25%;
+  min-height: 20vh;
+  margin: 2%;
+  font-size: 100%;
+  border: 0.25ex #0af solid;
+}
