@@ -26,7 +26,10 @@ function CreateListing(props) {
     }
 
     const handleFileSelected = event => {
+      console.log('event.target.files: ' + event.target.files)
+      console.log('event.target.files[0]: ' + event.target.files[0])
       setImagesToUpload(event.target.files);
+      console.log('imagesToUpload: ' + imagesToUpload);
     }
 
     const handleCancel = (event) => {
@@ -35,6 +38,8 @@ function CreateListing(props) {
 
     const submit = (event) => {
         props.setSearchBar(true)
+
+        var id = null;
 
         axios.post('https://drp21-backend.herokuapp.com/api/v1/listings', {
             title: title,
@@ -45,11 +50,24 @@ function CreateListing(props) {
             'Access-Control-Allow-Origin': '*',
             'Content-Type': 'text/html; charset=UTF-8'
         })
-        .then(response => setListingId(response.data.id));
+        .then(response => {
+          id = response.data.id;
+          console.log('response id: ' + response.data.id);
 
-        const fd = new FormData();
-        fd.append('photos', imagesToUpload);
-        fd.append('listing', listingId);
+          for (var i = 0; i < imagesToUpload.length; i++) {
+              const fd = new FormData();
+              fd.append('photo', imagesToUpload[i]);
+              console.log('images to upload: ' + imagesToUpload[i]);
+              fd.append('listing', id);
+
+              axios.post('https://drp21-backend.herokuapp.com/api/v1/uploadPhoto', fd, {
+                'Content-Type': 'multipart/form-data'
+              })
+              .then(response => console.log(response.data));
+          }
+        });
+
+
 
         // if (imagesToUpload.length == 1) {
         //   url = 'https://drp21-backend.herokuapp.com/api/v1/uploadPhoto';
@@ -57,8 +75,7 @@ function CreateListing(props) {
         //   url = 'https://drp21-backend.herokuapp.com/api/v1/uploadMultiplePhotos';
         // }
 
-        axios.post('https://drp21-backend.herokuapp.com/api/v1/uploadMultiplePhotos', fd)
-        .then(response => console.log(response.data));
+
 
         props.setRefresh(true)
         event.preventDefault();
