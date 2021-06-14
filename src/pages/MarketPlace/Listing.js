@@ -1,11 +1,15 @@
 import './Listing.css';
-import defaultListing from '../../images/laptop.jpg';
+import defaultListing from '../../images/noImageAvailable.png';
 
 function Listing(props) {
 
+    const url = props.listing.photos.length 
+        ? `https://drp21-backend.herokuapp.com/api/v1/downloadPhoto/${props.listing.photos[0].id}`
+        : defaultListing;
+
     return (
         <div className='Listing'>
-            <img src={defaultListing} className='DefaultListingPicture' />
+            <img src={url} className='DefaultListingPicture' />
             <h3 className="Title">{props.listing.title}</h3>
             <p className="Description"> {props.listing.description} </p>
             <div id='bottom'>
