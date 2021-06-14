@@ -29,7 +29,7 @@ function Home() {
                     <img src={logo} className="Home-logo" alt="logo" />
                     <p>ReusingElectronicsAndOtherStuff</p>
                     <div className="Home-redirects">
-                        <button className="Home-btn" onClick={routeChangeMarketplace}>Marktplace</button>
+                        <button className="Home-btn" onClick={routeChangeMarketplace}>Marketplace</button>
                         <button className="Home-btn" onClick={routeChangeRepairForum}>Repair Forum</button>
                         <button className="Home-btn" onClick={routeChangeLogin}>Login</button>
                     </div>
