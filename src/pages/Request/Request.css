@@ -3,10 +3,11 @@
     width: 33%;
     min-height: max-content;
     margin: 0 1% 0 1%;
-    background-color: #0af;
-    border-radius: 0.5ex;
     position: relative;
     padding-bottom: 5ex;
+    border: 0.5ex #0af solid;
+    background-color: #efefef;
+    border-radius: 1ex;
 }
 
 .DefaultRequestPicture {
@@ -18,7 +19,7 @@
 .Title {
     text-align: center;
     width: 100%;
-    margin: 0 1% 1% 1%;
+    margin: 1% 1% 0% 1%;
     font-size: 1.5ex;
     font-weight: 1000;
     color: #000;
