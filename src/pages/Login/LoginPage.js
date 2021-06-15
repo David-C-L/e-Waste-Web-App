@@ -8,11 +8,6 @@ import LoginDetails from './LoginDetails';
 function LoginPage() {
   const { user, setUser } = useContext(UserContext); 
   const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-
-  const handlePassword = event => {
-    setPassword(event.target.value)
-  };
 
   const handleEmail = event => {
     setEmail(event.target.value);
@@ -23,11 +18,9 @@ function LoginPage() {
       .then(response => {
         setUser(response.data);
         setEmail('');
-        setPassword('');
       })
       .catch(() => {
         setEmail('');
-        setPassword('');
       }) 
   };
 
@@ -43,8 +36,6 @@ function LoginPage() {
             <LoginDetails
               email={email}
               handleEmail={handleEmail}
-              password={password}
-              handlePassword={handlePassword}
               attemptLogin={attemptLogin}
             />
             <div className='CreateAccountText'>

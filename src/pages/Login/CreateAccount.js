@@ -6,7 +6,6 @@ function CreateAccount () {
   const [email, setEmail] = useState('');
   const [firstname, setFirstname] = useState('');
   const [surname, setSurname] = useState('');
-  const [password, setPassword] = useState('');
 
   const handleEmailInput = event => {
     setEmail(event.target.value);
@@ -20,12 +19,8 @@ function CreateAccount () {
     setSurname(event.target.value);
   }
 
-  const handlePasswordInput = event => {
-    setPassword(event.target.value);
-  }
-
   const handleSubmit = () => {
-    if (email && firstname && surname && password) {
+    if (email && firstname && surname) {
       axios.post('https://drp21-backend.herokuapp.com/api/v1/users/', {
         'email': email,
         'firstname': firstname,
@@ -58,12 +53,6 @@ function CreateAccount () {
         <input id='surnameInput' className='CreateAccountInput'
           type='text' placeholder='Please enter your surname.'
           onChange={handleSurnameInput}
-        />
-        <br/><br/>
-        <label for='passwordInput'> Password: </label>
-        <input id='passwordInput' className='CreateAccountInput'
-          type='password' placeholder='Please enter your password.'
-          onChange={handlePasswordInput}
         />
         <button className='CreateAccountButton' onClick={handleSubmit}>Sign Up!</button>
       </div>
