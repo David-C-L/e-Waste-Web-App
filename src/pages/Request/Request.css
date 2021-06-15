@@ -1,4 +1,4 @@
-.Listing {
+.Request {
     text-align: center;
     width: 33%;
     min-height: max-content;
@@ -9,7 +9,7 @@
     padding-bottom: 5ex;
 }
 
-.DefaultListingPicture {
+.DefaultRequestPicture {
     width: 90%;
     margin: 0.5ex;
     height: auto;

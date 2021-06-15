@@ -23,7 +23,7 @@ function Requests(props) {
 
     useEffect(() => {
         if (props.refresh) {
-            // GET request using axios inside useEffect React hook
+            // TODO: GET request using axios to correct link
             axios.get('https://drp21-backend.herokuapp.com/api/v1/listings')
                 .then(response => setListings(response.data));
         }

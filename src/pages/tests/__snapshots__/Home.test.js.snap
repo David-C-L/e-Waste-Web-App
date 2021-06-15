@@ -21,6 +21,13 @@ exports[`NavBar component matches the snapshot 1`] = `
     </a>
     <a
       className="NavBarLink"
+      href="/request"
+      onClick={[Function]}
+    >
+      Requests
+    </a>
+    <a
+      className="NavBarLink"
       href="/feed"
       onClick={[Function]}
     >
