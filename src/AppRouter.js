@@ -5,6 +5,7 @@ import Marketplace from './pages/MarketPlace/Marketplace';
 import NavBar from './pages/NavBar';
 import Home from './pages/Home/Home'
 import CreateAccount from './pages/Login/CreateAccount';
+import ReqHome from './pages/Request/ReqHome'
 import {BrowserRouter, Route} from 'react-router-dom';
 import { UserContext } from './UserContext';
 
@@ -20,6 +21,7 @@ function AppRouter() {
       <UserContext.Provider value={userMemo}>
         <NavBar/>
         <Route exact path='/' component={Home} />
+        <Route exact path='/requests' component={ReqHome} />
         <Route exact path='/feed' component={Feed} />
         <Route exact path='/market' component={Marketplace} />
         <Route exact path='/login' component={LoginPage} />

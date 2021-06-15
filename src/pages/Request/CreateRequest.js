@@ -1,16 +1,14 @@
-import './CreateListing.css'
+import { UserContext } from '../../UserContext';
 import { useState, useContext } from 'react'
 import axios from 'axios'
-import { UserContext } from '../../UserContext';
 
-function CreateListing(props) {
-
-    const { user } = useContext(UserContext);
+function CreateRequest(props) {
 
     const [title, setTitle] = useState("");
     const [description, setDescription] = useState("");
     const [dateTime, setDateTime] = useState("");
-    const [imagesToUpload, setImagesToUpload] = useState([]);
+
+    const { user } = useContext(UserContext);
 
     const handleTitleChange = (event) => {
         setTitle(event.target.value)
@@ -24,10 +22,6 @@ function CreateListing(props) {
         setDateTime(event.target.value + ":00")
     }
 
-    const handleFileSelected = event => {
-      setImagesToUpload(event.target.files);
-    }
-
     const handleCancel = (event) => {
         props.setSearchBar(true)
     }
@@ -35,9 +29,7 @@ function CreateListing(props) {
     const submit = (event) => {
         props.setSearchBar(true)
 
-        var id = null;
-
-        axios.post('https://drp21-backend.herokuapp.com/api/v1/listings', {
+        axios.post('https://drp21-backend.herokuapp.com/api/v1/requests', {
             title: title,
             description: description,
             availableUntil: dateTime,
@@ -46,20 +38,6 @@ function CreateListing(props) {
             'Access-Control-Allow-Origin': '*',
             'Content-Type': 'text/html; charset=UTF-8'
         })
-        .then(response => {
-          id = response.data.id;
-
-          for (var i = 0; i < imagesToUpload.length; i++) {
-              const fd = new FormData();
-              fd.append('photo', imagesToUpload[i]);
-              fd.append('listing', id);
-
-              axios.post('https://drp21-backend.herokuapp.com/api/v1/uploadPhoto', fd, {
-                'Content-Type': 'multipart/form-data'
-              })
-              .then(response => console.log(response.data));
-          }
-        });
 
         props.setRefresh(true)
         event.preventDefault();
@@ -75,10 +53,6 @@ function CreateListing(props) {
                     </div>
                     <div className="ListingBottom">
                         <textarea className="ListingDescription" type="text" onChange={handleDescriptionChange} value={description} placeholder="description" />
-                        <div className="UploadSection">
-                          <label for="photoUpload"> Upload Photos: </label> <br/><br/>
-                          <input id="photoUpload" type="file" multiple onChange={handleFileSelected} />
-                        </div>
                     </div>
                 </div>
                 <div className="Buttons">
@@ -87,11 +61,11 @@ function CreateListing(props) {
                 </div>
             </div>
             :
-            <div className='Login'>
-                <h3 className='LoginText'> Please log in to create a post. </h3>
+            <div className="Login">
+                <h3 className='LoginText'> Please log in to create a request. </h3>
                 <button className="Return" type="button" onClick={handleCancel}>Return</button>
             </div>
     )
 }
 
-export default CreateListing
+export default CreateRequest;

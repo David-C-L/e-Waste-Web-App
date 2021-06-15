@@ -12,6 +12,7 @@ function NavBar() {
       <p>
         <Link className='NavBarLink' to='/'>Home</Link>
         <Link className='NavBarLink' to='/market'>Marketplace</Link>
+        <Link className='NavBarLink' to='/requests'>Requests</Link>
         <Link className='NavBarLink' to='/feed'>Repair Forum</Link>
         { user !== null
           ? <button onClick={() => setUser(null)}> logout </button>

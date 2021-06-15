@@ -15,13 +15,11 @@ function CreateComment(props) {
 
     const handleCancel = () => {
         setDescription("")
-        props.setCreateComment(false)
     }
 
     const handleSubmit = (event) => {
         //POST method
         setDescription("")
-        props.setCreateComment(false)
 
         axios.post(`https://drp21-backend.herokuapp.com/api/v1/comments`, {
             post: props.id,

@@ -9,7 +9,7 @@ function Listing(props) {
 
     return (
         <div className='Listing'>
-            <img src={url} className='DefaultListingPicture' />
+            <img src={url} className='DefaultListingPicture' alt="img"/>
             <h3 className="Title">{props.listing.title}</h3>
             <p className="Description"> {props.listing.description} </p>
             <div id='bottom'>
