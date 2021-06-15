@@ -1,38 +1,87 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`NavBar component matches the snapshot 1`] = `
-<div
-  className="NavBar"
->
-  <p>
-    <a
-      className="NavBarLink"
-      href="/"
-      onClick={[Function]}
+Array [
+  <div
+    className="NavBar"
+  >
+    <p>
+      <a
+        className="NavBarLink"
+        href="/"
+        onClick={[Function]}
+      >
+        Home
+      </a>
+      <a
+        className="NavBarLink"
+        href="/market"
+        onClick={[Function]}
+      >
+        Marketplace
+      </a>
+      <a
+        className="NavBarLink"
+        href="/feed"
+        onClick={[Function]}
+      >
+        Repair Forum
+      </a>
+      <a
+        className="NavBarLink"
+        href="/login"
+        onClick={[Function]}
+      >
+        Login
+      </a>
+    </p>
+  </div>,
+  <div
+    className="Home"
+  >
+    <header
+      className="Home-header"
     >
-      Home
-    </a>
-    <a
-      className="NavBarLink"
-      href="/market"
-      onClick={[Function]}
-    >
-      Marketplace
-    </a>
-    <a
-      className="NavBarLink"
-      href="/feed"
-      onClick={[Function]}
-    >
-      Repair Forum
-    </a>
-    <a
-      className="NavBarLink"
-      href="/login"
-      onClick={[Function]}
-    >
-      Login
-    </a>
-  </p>
-</div>
+      <div
+        className="HomeContainer"
+        style={
+          Object {
+            "width": "90%",
+          }
+        }
+      >
+        <img
+          alt="logo"
+          className="Home-logo"
+          src="recycle-logo.png"
+        />
+        <p>
+          ReusingElectronicsAndOtherStuff
+        </p>
+        <div
+          className="Home-redirects"
+        >
+          <button
+            className="Home-btn"
+            onClick={[Function]}
+          >
+            Marketplace
+          </button>
+          <button
+            className="Home-btn"
+            onClick={[Function]}
+          >
+            Repair Forum
+          </button>
+          <button
+            className="Home-btn"
+            onClick={[Function]}
+          >
+            Login
+          </button>
+        </div>
+      </div>
+    </header>
+  </div>,
+]
 `;
