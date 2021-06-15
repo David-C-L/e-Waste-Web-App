@@ -16,6 +16,11 @@
   text-align: left;
 }
 
+.CharityText {
+  font-size: 1.5ex;
+  margin-right: 10%;
+}
+
 .CreateAccountInput {
   width: 99%;
   font-size: 1.2ex;
