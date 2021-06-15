@@ -17,8 +17,8 @@ function AppRouter() {
 
   return (
     <BrowserRouter>
-      <NavBar/>
       <UserContext.Provider value={userMemo}>
+        <NavBar/>
         <Route exact path='/' component={Home} />
         <Route exact path='/feed' component={Feed} />
         <Route exact path='/market' component={Marketplace} />
