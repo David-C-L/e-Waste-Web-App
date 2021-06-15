@@ -12,12 +12,9 @@ function Post(props) {
 
     const [isCollapsed, setIsCollapsed] = useState(true);
     const [reload, setReload] = useState(true)
-    const [createComment, setCreateComment] = useState(false)
-    const [getReq, setGetReq] = useState({})
     const [displayComments, setDisplayComments] = useState([])
 
     function updateDisplay(event) {
-        setGetReq(event)
         setDisplayComments(event)
     }
 
@@ -50,14 +47,12 @@ function Post(props) {
                     <div>
                         {user ? 
                             <CreateComment setReload={setReload}
-                                setCreateComment={setCreateComment}
                                 id={props.id} />
                             : <p>Sign in to comment!</p>
                         }
                         <Comments reload={reload}
                             setReload={setReload}
                             updateDisplay={updateDisplay}
-                            setGetReq={setGetReq}
                             getReq={displayComments}
                             id={props.id}
                             comments={props.comments} />

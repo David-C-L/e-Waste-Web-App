@@ -24,18 +24,17 @@ function Requests(props) {
     useEffect(() => {
         if (props.refresh) {
             // TODO: GET request using axios to correct link
-            axios.get('https://drp21-backend.herokuapp.com/api/v1/listings')
+            axios.get('https://drp21-backend.herokuapp.com/api/v1/requests')
                 .then(response => setListings(response.data));
         }
-        console.log(listings)
         props.setRefresh(false)
     }, [props]);
 
 
-
+    console.log(listings)
     return (
         <div>
-            {listings === null || listings === undefined || listings === []
+            {listings === null || listings === undefined || listings.length === 0
                 ? <p> No Listings </p>
                 : splitArray(filter(listings, props.search), 3).map(listingGroup =>
                     <RequestRow listings={listingGroup} />)

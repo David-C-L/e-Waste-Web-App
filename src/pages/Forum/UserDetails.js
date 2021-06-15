@@ -20,7 +20,7 @@ function UserDetails(props) {
   
     return (
         <>
-            <img src={defaultProfile} className='ProfilePicture'/>
+            <img src={defaultProfile} className='ProfilePicture' alt="Profile img"/>
             <p className="Username"> {name} </p>
         </>
     );

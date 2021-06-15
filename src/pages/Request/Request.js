@@ -1,21 +1,15 @@
 import './Request.css';
-import defaultListing from '../../images/noImageAvailable.png';
 
 function Request(props) {
 
-    // TODO: Do we need pictures on requests
-    const url = props.listing.photos.length 
-        ? `https://drp21-backend.herokuapp.com/api/v1/downloadPhoto/${props.listing.photos[0].id}`
-        : defaultListing;
-
+    // TODO: Change to match requests 
     return (
         <div className='Request'>
-            <img src={url} className='DefaultRequestPicture' />
             <h3 className="Title">{props.listing.title}</h3>
             <p className="Description"> {props.listing.description} </p>
             <div id='bottom'>
-            {/* <p className="TimeRemaining"> Available until: {props.listing.timeRemaining} </p> */}
-            <p className="TimeRemaining"> Available until: {props.listing.availableUntil} </p>
+                {/* <p className="TimeRemaining"> Available until: {props.listing.timeRemaining} </p> */}
+                <p className="TimeRemaining"> Available until: {props.listing.availableUntil} </p>
                 <p className="TimeRemaining"> {props.listing.ownerEmail} </p>
                 {/* <Link className='MessageOwner' to='/'>Message the owner</Link> */}
             </div>

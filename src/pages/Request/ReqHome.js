@@ -17,7 +17,7 @@ function ReqHome(props) {
                     <div className="Search">
                         {searchBar
                             ? <SearchRequest setSearchBar={setSearchBar} setSearch={setSearch} setRefresh={setRefresh}/>
-                            : <CreateRequest setSearchBar={setSearchBar} />
+                            : <CreateRequest setSearchBar={setSearchBar} setRefresh={setRefresh}/>
                         }
                     </div>
                     <Requests refresh={refresh} search={search} setRefresh={setRefresh}/>

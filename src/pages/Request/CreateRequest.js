@@ -1,12 +1,12 @@
 import { UserContext } from '../../UserContext';
 import { useState, useContext } from 'react'
+import axios from 'axios'
 
 function CreateRequest(props) {
 
     const [title, setTitle] = useState("");
     const [description, setDescription] = useState("");
     const [dateTime, setDateTime] = useState("");
-    const [imagesToUpload, setImagesToUpload] = useState([]);
 
     const { user } = useContext(UserContext);
 
@@ -22,16 +22,25 @@ function CreateRequest(props) {
         setDateTime(event.target.value + ":00")
     }
 
-    const handleFileSelected = event => {
-        setImagesToUpload(event.target.files);
-    }
-
     const handleCancel = (event) => {
         props.setSearchBar(true)
     }
 
-    const submit = () => {
+    const submit = (event) => {
+        props.setSearchBar(true)
 
+        axios.post('https://drp21-backend.herokuapp.com/api/v1/requests', {
+            title: title,
+            description: description,
+            availableUntil: dateTime,
+            owner: user.email
+        }, {
+            'Access-Control-Allow-Origin': '*',
+            'Content-Type': 'text/html; charset=UTF-8'
+        })
+
+        props.setRefresh(true)
+        event.preventDefault();
     }
 
     return (
@@ -44,10 +53,6 @@ function CreateRequest(props) {
                     </div>
                     <div className="ListingBottom">
                         <textarea className="ListingDescription" type="text" onChange={handleDescriptionChange} value={description} placeholder="description" />
-                        <div className="UploadSection">
-                            <label for="photoUpload"> Upload Photos: </label> <br /><br />
-                            <input id="photoUpload" type="file" multiple onChange={handleFileSelected} />
-                        </div>
                     </div>
                 </div>
                 <div className="Buttons">
@@ -57,7 +62,7 @@ function CreateRequest(props) {
             </div>
             :
             <div className="Login">
-                <h3 className='LoginText'> Please log in to create a post. </h3>
+                <h3 className='LoginText'> Please log in to create a request. </h3>
                 <button className="Return" type="button" onClick={handleCancel}>Return</button>
             </div>
     )

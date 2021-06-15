@@ -20,7 +20,7 @@ function AppRouter() {
       <NavBar/>
       <UserContext.Provider value={userMemo}>
         <Route exact path='/' component={Home} />
-        <Route exact path='/request' component={ReqHome} />
+        <Route exact path='/requests' component={ReqHome} />
         <Route exact path='/feed' component={Feed} />
         <Route exact path='/market' component={Marketplace} />
         <Route exact path='/login' component={LoginPage} />

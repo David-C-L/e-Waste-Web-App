@@ -1,5 +1,5 @@
 import './Home.css';
-import React, { useState } from 'react';
+import React from 'react';
 import logo from '../../images/recycle-logo.png'
 import { useHistory } from "react-router-dom";
 
@@ -9,6 +9,11 @@ function Home() {
 
     const routeChangeMarketplace = () => {
         let path = `market`;
+        history.push(path);
+    }
+
+    const routeChangeRequests= () => {
+        let path = `requests`;
         history.push(path);
     }
 
@@ -30,6 +35,7 @@ function Home() {
                     <p>ReusingElectronicsAndOtherStuff</p>
                     <div className="Home-redirects">
                         <button className="Home-btn" onClick={routeChangeMarketplace}>Marketplace</button>
+                        <button className="Home-btn" onClick={routeChangeRequests}>Requests</button>
                         <button className="Home-btn" onClick={routeChangeRepairForum}>Repair Forum</button>
                         <button className="Home-btn" onClick={routeChangeLogin}>Login</button>
                     </div>
