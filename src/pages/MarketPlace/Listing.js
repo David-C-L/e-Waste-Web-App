@@ -5,14 +5,17 @@ import Carousel from 'react-elastic-carousel';
 function Listing(props) {
 
     const url = props.listing.photos.length 
-        ? `https://drp21-backend.herokuapp.com/api/v1/downloadPhoto/${props.listing.photos[0].id}`
+        ? `https://drp21-backend.herokuapp.com/api/v1/downloadPhoto/`
         : defaultListing;
 
     return (
         <div className='Listing'>
             <Carousel className='Carousel'>
-              <img src={url} className='DefaultListingPicture' alt="img"/>
-              <img src={url} className='DefaultListingPicture' alt="img"/>            
+              {props.listing.photos.map(
+                photo => 
+                  <img src={url + `${photo.id}`} className='DefaultListingPicture' alt="img"/>
+
+              )}
             </Carousel>
             <h3 className="Title">{props.listing.title}</h3>
             <p className="Description"> {props.listing.description} </p>
