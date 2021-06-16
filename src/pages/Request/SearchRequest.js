@@ -28,7 +28,7 @@ function SearchRequest(props) {
     return (
         <div className="SearchBar">
             <div className="CreateRequest">
-                <button className="CreateButton" onClick={handleClick}>Create Listing</button>
+                <button className="CreateButton" onClick={handleClick}>Create Request</button>
             </div>
             <div className="SearchRequest">
                 <textarea className="SearchText" type="text" value={search} onChange={handleTextChange} placeholder="Search"/>
