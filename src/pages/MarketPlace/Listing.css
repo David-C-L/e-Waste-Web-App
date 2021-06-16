@@ -73,6 +73,11 @@
   border-radius: 25%;
 }
 
+/* round buttons on hover */
+.rec.rec-arrow:focus:enabled {
+  background-color:#0af;
+}
+
 
 /* hide disabled buttons */
 .rec.rec-arrow:disabled {
