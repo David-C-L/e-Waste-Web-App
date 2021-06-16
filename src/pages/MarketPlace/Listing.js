@@ -1,5 +1,6 @@
 import './Listing.css';
 import defaultListing from '../../images/noImageAvailable.png';
+import Carousel from 'react-elastic-carousel';
 
 function Listing(props) {
 
@@ -9,7 +10,10 @@ function Listing(props) {
 
     return (
         <div className='Listing'>
-            <img src={url} className='DefaultListingPicture' alt="img"/>
+            <Carousel className='Carousel'>
+              <img src={url} className='DefaultListingPicture' alt="img"/>
+              <img src={url} className='DefaultListingPicture' alt="img"/>            
+            </Carousel>
             <h3 className="Title">{props.listing.title}</h3>
             <p className="Description"> {props.listing.description} </p>
             <div id='bottom'>
