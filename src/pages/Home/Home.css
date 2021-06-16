@@ -63,6 +63,6 @@
   border: 0.25ex #0af solid;
 }
 
-button:hover {
+.Home-btn:hover {
   background-color: #42f548;
 }
