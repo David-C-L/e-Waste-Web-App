@@ -3,9 +3,11 @@
     width: 33%;
     min-height: max-content;
     margin: 0 1% 0 1%;
+    padding: 0 1% 0 1%;
     position: relative;
     padding-bottom: 5ex;
     /* border: 0.5ex #0af solid; */
+    border-width: 0.3ex;
     border-radius: 2ex;
     border-style: solid;
     background-color: #efefef;

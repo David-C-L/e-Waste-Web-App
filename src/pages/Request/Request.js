@@ -20,8 +20,8 @@ function Request(props) {
             <p className="Description"> {props.listing.description} </p>
             <div id='bottom'>
                 {/* <p className="TimeRemaining"> Available until: {props.listing.timeRemaining} </p> */}
-                <p className="TimeRemaining"> Available until: {props.listing.availableUntil} </p>
-                <p className="TimeRemaining"> {props.listing.ownerEmail} </p>
+                <p className="TimeRemaining"> { props.listing.ownerCharity ? 'Available indefinitely' : 'Available until: ' + props.listing.availableUntil} </p>
+                <p className="TimeRemaining"> {(props.listing.ownerCharity ? 'Contact charity: ' : '') + props.listing.ownerEmail} </p>
                 {/* <Link className='MessageOwner' to='/'>Message the owner</Link> */}
             </div>
         </div>
