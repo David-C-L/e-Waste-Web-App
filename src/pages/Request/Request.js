@@ -2,9 +2,20 @@ import './Request.css';
 
 function Request(props) {
 
+    let borderColor = null
+    if (props.listing.ownerCharity) {
+        borderColor = "#42f548"
+    } else {
+        borderColor = "#0af"
+    }
+
+    var style = {
+        borderColor : borderColor
+    }
+
     // TODO: Change to match requests 
     return (
-        <div className='Request'>
+        <div className='Request' style={style}>
             <h3 className="Title">{props.listing.title}</h3>
             <p className="Description"> {props.listing.description} </p>
             <div id='bottom'>
