@@ -30,13 +30,13 @@ function Requests(props) {
         props.setRefresh(false)
     }, [props]);
 
+    var list = [...(listings.filter(l => l.ownerCharity)), ...(listings.filter(l => !l.ownerCharity))]
 
-    console.log(listings)
     return (
         <div>
             {listings === null || listings === undefined || listings.length === 0
                 ? <p> No Listings </p>
-                : splitArray(filter(listings, props.search), 3).map(listingGroup =>
+                : splitArray(filter(list, props.search), 3).map(listingGroup =>
                     <RequestRow listings={listingGroup} />)
             }
         </div>

@@ -4,7 +4,7 @@ import Post from './Post'
 import { RepairPost } from '../../RepairPost'
 
 function Posts(props) {
-    const {posts } = useContext(RepairPost)
+    // const {posts, setPosts } = useContext(RepairPost)
 
     useEffect(() => {
         if (props.reload) {
