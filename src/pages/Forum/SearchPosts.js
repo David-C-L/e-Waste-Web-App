@@ -24,7 +24,6 @@ function SearchPosts(props) {
         props.setCategoryFilter(category)
         props.setSearchTerm(search)
         props.setReload(true)
-        props.filterDisplay()
     }
 
     const cancel = () => {
