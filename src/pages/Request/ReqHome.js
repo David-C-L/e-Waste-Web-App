@@ -16,14 +16,15 @@ function ReqHome(props) {
                 <div className="ReqHomeContainer" style={{ width: "90%" }}>
                     <div className="Search">
                         {searchBar
-                            ? <SearchRequest setSearchBar={setSearchBar} setSearch={setSearch} setRefresh={setRefresh}/>
-                            : <CreateRequest setSearchBar={setSearchBar} setRefresh={setRefresh}/>
+                            ? <SearchRequest setSearchBar={setSearchBar} setSearch={setSearch} setRefresh={setRefresh} />
+                            : <CreateRequest setSearchBar={setSearchBar} setRefresh={setRefresh} />
                         }
                     </div>
-                    <Requests refresh={refresh} search={search} setRefresh={setRefresh}/>
+                    <Requests refresh={refresh} search={search} setRefresh={setRefresh} />
                 </div>
             </header>
-        </div>)
+        </div>
+    )
 }
 
 export default ReqHome

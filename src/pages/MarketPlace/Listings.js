@@ -1,6 +1,7 @@
-import { useEffect } from 'react';
+import { useContext, useEffect } from 'react';
 import ListingRow from './ListingRow';
 import axios from 'axios';
+import {ListingPost} from '../../ListingPost'
 
 function splitArray(array, groupSize) {
     const numGroups = Math.ceil(array.length / groupSize);
@@ -19,22 +20,25 @@ function filter(listings, search) {
 
 function Listings(props) {
 
+    const {listing, setListings} = useContext(ListingPost);
+
     //TODO: GET request to fetch listings and display
     useEffect(() => {
         if (props.refresh) {
             // GET request using axios inside useEffect React hook
             axios.get('https://drp21-backend.herokuapp.com/api/v1/listings')
-                .then(response => props.setListings(response.data));
+                .then(response => setListings(response.data));
         }
         props.setRefresh(false)
-    }, [props]);
+    }, [props, setListings]);
 
+    console.log(listing)
 
     return (
         <div className="Listings">
-            { props.listings === null || props.listings === undefined
+            { listing === null || listing === undefined
                 ? <p> No Listings </p>
-                : splitArray(filter(props.listings, props.search), 3).map(listingGroup =>
+                : splitArray(filter(listing, props.search), 3).map(listingGroup =>
                     <ListingRow listings={listingGroup} />)
             }
         </div>

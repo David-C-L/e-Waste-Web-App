@@ -7,7 +7,6 @@ import CreateListing from './CreateListing'
 
 function Marketplace() {
 
-    const [listings, setListings] = useState([]);
     const [search, setSearch] = useState("");
     const [refresh, setRefresh] = useState(true);
     const [searchBar, setSearchBar] = useState(true);
@@ -23,7 +22,7 @@ function Marketplace() {
                         ? <SearchMarket search={search} setSearch={setSearch} setRefresh={setRefresh} setSearchBar={setSearchBar}/>
                         : <CreateListing setRefresh={setRefresh} setSearchBar={setSearchBar} />
                     }
-                    <Listings listings={listings} setListings={setListings} setRefresh={setRefresh} refresh={refresh} search={search} />
+                    <Listings setRefresh={setRefresh} refresh={refresh} search={search} />
                 </div>
             </header>
         </div>

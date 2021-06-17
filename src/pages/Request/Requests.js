@@ -1,4 +1,4 @@
-import { useEffect, useState, useContext } from "react"
+import { useEffect, useContext } from "react"
 import axios from "axios"
 import RequestRow from "./RequestRow";
 import { RequestPost } from '../../RequestPost'
@@ -29,7 +29,7 @@ function Requests(props) {
                 .then(response => setRequests(response.data));
         }
         props.setRefresh(false)
-    }, [props]);
+    }, [props, setRequests]);
 
 
     return (
