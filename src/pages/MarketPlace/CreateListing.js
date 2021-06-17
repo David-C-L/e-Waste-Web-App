@@ -25,7 +25,7 @@ function CreateListing(props) {
     }
 
     const handleFileSelected = event => {
-      setImagesToUpload(event.target.files);
+        setImagesToUpload(event.target.files);
     }
 
     const handleCancel = (event) => {
@@ -46,20 +46,20 @@ function CreateListing(props) {
             'Access-Control-Allow-Origin': '*',
             'Content-Type': 'text/html; charset=UTF-8'
         })
-        .then(response => {
-          id = response.data.id;
+            .then(response => {
+                id = response.data.id;
 
-          for (var i = 0; i < imagesToUpload.length; i++) {
-              const fd = new FormData();
-              fd.append('photo', imagesToUpload[i]);
-              fd.append('listing', id);
+                for (var i = 0; i < imagesToUpload.length; i++) {
+                    const fd = new FormData();
+                    fd.append('photo', imagesToUpload[i]);
+                    fd.append('listing', id);
 
-              axios.post('https://drp21-backend.herokuapp.com/api/v1/uploadPhoto', fd, {
-                'Content-Type': 'multipart/form-data'
-              })
-              .then(response => console.log(response.data));
-          }
-        });
+                    axios.post('https://drp21-backend.herokuapp.com/api/v1/uploadPhoto', fd, {
+                        'Content-Type': 'multipart/form-data'
+                    })
+                        .then(response => console.log(response.data));
+                }
+            });
 
         props.setRefresh(true)
         event.preventDefault();
@@ -67,23 +67,28 @@ function CreateListing(props) {
 
     return (
         user ?
-            <div className="Create">
-                <div className="ListingFields">
-                    <div className="ListingTop">
-                        <textarea className="ListingTitle" type="text" onChange={handleTitleChange} value={title} placeholder="title" />
-                        <input className="DateTime" type="datetime-local" onChange={handleDateTimeChange} />
-                    </div>
-                    <div className="ListingBottom">
-                        <textarea className="ListingDescription" type="text" onChange={handleDescriptionChange} value={description} placeholder="description" />
-                        <div className="UploadSection">
-                          <label for="photoUpload"> Upload Photos: </label> <br/><br/>
-                          <input id="photoUpload" type="file" multiple onChange={handleFileSelected} />
+            <div>
+                <div className="Create">
+                    <div className="ListingFields">
+                        <div className="ListingTop">
+                            <textarea className="ListingTitle" type="text" onChange={handleTitleChange} value={title} placeholder="title" />
+                            <input className="DateTime" type="datetime-local" onChange={handleDateTimeChange} />
+                        </div>
+                        <div className="ListingBottom">
+                            <textarea className="ListingDescription" type="text" onChange={handleDescriptionChange} value={description} placeholder="description" />
+                            <div className="UploadSection">
+                                <label for="photoUpload"> Upload Photos: </label> <br /><br />
+                                <input id="photoUpload" type="file" multiple onChange={handleFileSelected} />
+                            </div>
                         </div>
                     </div>
+                    <div className="Buttons">
+                        <button className="SubmitList" type="submit" onClick={submit}>Submit</button>
+                        <button className="CancelList" type="submit" onClick={handleCancel}>Cancel</button>
+                    </div>
                 </div>
-                <div className="Buttons">
-                    <button className="SubmitList" type="submit" onClick={submit}>Submit</button>
-                    <button className="CancelList" type="submit" onClick={handleCancel}>Cancel</button>
+                <div className="Preview">
+                    <button >Preview </button>
                 </div>
             </div>
             :

@@ -1,16 +1,21 @@
-import React, { useEffect } from 'react';
+import React, { useContext, useEffect } from 'react';
 import axios from 'axios'
 import Post from './Post'
+import { RepairPost } from '../../RepairPost'
 
 function Posts(props) {
-
+    const {posts } = useContext(RepairPost)
 
     useEffect(() => {
         if (props.reload) {
             // GET request using axios inside useEffect React hook
             axios.get('https://drp21-backend.herokuapp.com/api/v1/posts')
-                .then(response => props.updateDisplay(response));
-        } 
+                // .then(response => );
+                .then(response => {
+                    // setPosts(response)
+                    props.updateDisplay(response)
+                })
+        }
         props.setReload(false)
     }, [props]);
 
