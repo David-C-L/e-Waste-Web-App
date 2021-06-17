@@ -2,6 +2,7 @@ import './CreateListing.css'
 import { useState, useContext } from 'react'
 import axios from 'axios'
 import { UserContext } from '../../UserContext';
+import Preview from './Preview';
 
 function CreateListing(props) {
 
@@ -67,7 +68,7 @@ function CreateListing(props) {
 
     return (
         user ?
-            <div>
+            <div className="Content">
                 <div className="Create">
                     <div className="ListingFields">
                         <div className="ListingTop">
@@ -88,7 +89,7 @@ function CreateListing(props) {
                     </div>
                 </div>
                 <div className="Preview">
-                    <button >Preview </button>
+                    <Preview title={title} setRefresh={props.setRefresh}/>
                 </div>
             </div>
             :
