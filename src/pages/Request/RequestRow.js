@@ -2,7 +2,6 @@ import Request from './Request';
 import './RequestRow.css';
 
 function RequestRow(props) {
-    console.log(props.listings)
     return (
         <div className='Row'>
             {

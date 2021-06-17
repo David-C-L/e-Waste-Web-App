@@ -1,6 +1,7 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState, useContext } from "react"
 import axios from "axios"
 import RequestRow from "./RequestRow";
+import { RequestPost } from '../../RequestPost'
 
 function splitArray(array, groupSize) {
     const numGroups = Math.ceil(array.length / groupSize);
@@ -19,24 +20,23 @@ function filter(listings, search) {
 
 function Requests(props) {
 
-    const [listings, setListings] = useState([])
+    const { request, setRequests } = useContext(RequestPost);
 
     useEffect(() => {
         if (props.refresh) {
             // TODO: GET request using axios to correct link
             axios.get('https://drp21-backend.herokuapp.com/api/v1/requests')
-                .then(response => setListings(response.data));
+                .then(response => setRequests(response.data));
         }
         props.setRefresh(false)
     }, [props]);
 
-    var list = [...(listings.filter(l => l.ownerCharity)), ...(listings.filter(l => !l.ownerCharity))]
 
     return (
         <div>
-            {listings === null || listings === undefined || listings.length === 0
+            {request === null || request === undefined || request.length === 0
                 ? <p> No Listings </p>
-                : splitArray(filter(list, props.search), 3).map(listingGroup =>
+                : splitArray(filter([...(request.filter(l => l.ownerCharity)), ...(request.filter(l => !l.ownerCharity))], props.search), 3).map(listingGroup =>
                     <RequestRow listings={listingGroup} />)
             }
         </div>
