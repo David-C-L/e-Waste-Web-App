@@ -72,13 +72,13 @@ Array [
             className="Home-btn"
             onClick={[Function]}
           >
-            Marketplace
+            Give away something
           </button>
           <button
             className="Home-btn"
             onClick={[Function]}
           >
-            Requests
+            Looking for something
           </button>
           <button
             className="Home-btn"
