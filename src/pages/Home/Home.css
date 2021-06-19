@@ -1,5 +1,6 @@
 .Home {
   text-align: center;
+  font-size: 100%;
 }
 
 .Home-logo {
@@ -55,7 +56,7 @@
 }
 
 .Home-btn {
-  border-radius: 20%;
+  border-radius: 1.5ex;
   width: 25%;
   min-height: 20vh;
   margin: 2%;
@@ -63,7 +64,33 @@
   border: 0.25ex #0af solid;
 }
 
-.Home-btn:hover {
-  background-color: #42f548;
+.Login-btn {
+  border-radius: 1.5ex;
+  width: 25%;
+  margin: 2%;
+  font-size: 100%;
+  border: 0.25ex #0af solid;
+
 }
 
+button {
+  border-radius: 1ex;
+}
+
+.LoggedIn {
+  font-size: 100%;
+}
+
+.HomeLogOut {
+  border: 0.25ex #0af solid;
+  width: 20%;
+  font-size: 100%;
+}
+
+.AppTitle {
+  font-size: 3ex;
+  margin: 2%;
+}
+button:hover {
+  background-color: #A7A7A7;
+}

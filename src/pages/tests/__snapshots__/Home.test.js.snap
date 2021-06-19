@@ -34,13 +34,16 @@ Array [
       >
         Repair Forum
       </a>
-      <a
-        className="NavBarLink"
-        href="/login"
-        onClick={[Function]}
+      <div
+        className="UserSection"
       >
-        Login
-      </a>
+        <button
+          className="LogoutBtn"
+          onClick={[Function]}
+        >
+          Login
+        </button>
+      </div>
     </p>
   </div>,
   <div
@@ -62,9 +65,11 @@ Array [
           className="Home-logo"
           src="recycle-logo.png"
         />
-        <p>
-          ReusingElectronicsAndOtherStuff
-        </p>
+        <h3
+          className="AppTitle"
+        >
+          ECycling
+        </h3>
         <div
           className="Home-redirects"
         >
@@ -84,15 +89,15 @@ Array [
             className="Home-btn"
             onClick={[Function]}
           >
-            Repair Forum
-          </button>
-          <button
-            className="Home-btn"
-            onClick={[Function]}
-          >
-            Login
+            Need help repairing
           </button>
         </div>
+        <button
+          className="Login-btn btn"
+          onClick={[Function]}
+        >
+          Login
+        </button>
       </div>
     </header>
   </div>,

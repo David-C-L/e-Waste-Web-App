@@ -1,9 +1,12 @@
 import './Home.css';
-import React from 'react';
+import React, { useContext } from 'react';
 import logo from '../../images/recycle-logo.png'
 import { useHistory } from "react-router-dom";
+import { UserContext } from '../../UserContext'
 
 function Home() {
+
+    const { user, setUser } = useContext(UserContext)
 
     const history = useHistory();
 
@@ -12,7 +15,7 @@ function Home() {
         history.push(path);
     }
 
-    const routeChangeRequests= () => {
+    const routeChangeRequests = () => {
         let path = `requests`;
         history.push(path);
     }
@@ -32,13 +35,21 @@ function Home() {
             <header className="Home-header">
                 <div className="HomeContainer" style={{ width: "90%" }}>
                     <img src={logo} className="Home-logo" alt="logo" />
-                    <p>ReusingElectronicsAndOtherStuff</p>
+                    <h3 className="AppTitle">ECycling</h3>
                     <div className="Home-redirects">
                         <button className="Home-btn" onClick={routeChangeMarketplace}>Give away something</button>
                         <button className="Home-btn" onClick={routeChangeRequests}>Looking for something</button>
-                        <button className="Home-btn" onClick={routeChangeRepairForum}>Repair Forum</button>
-                        <button className="Home-btn" onClick={routeChangeLogin}>Login</button>
+                        <button className="Home-btn" onClick={routeChangeRepairForum}>Need help repairing</button>
                     </div>
+                    {user
+                        ?
+                        <div className="LoggedIn">
+                            <p>Welcome {user.firstname} {user.surname}</p>
+                            <button className="HomeLogOut btn" onClick={() => setUser(null)}>logout</button>
+                        </div>
+                        :
+                        <button className="Login-btn btn" onClick={routeChangeLogin}>Login</button>
+                    }
                 </div>
             </header>
         </div>

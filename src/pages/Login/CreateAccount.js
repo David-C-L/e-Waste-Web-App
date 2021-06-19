@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import './CreateAccount.css';
 
 function CreateAccount () {
@@ -8,6 +9,9 @@ function CreateAccount () {
   const [surname, setSurname] = useState('');
   const [charity, setCharity] = useState(false);
   const [charityLogo, setCharityLogo] = useState(null);
+
+  const history = useHistory();
+
 
   const handleEmailInput = event => {
     setEmail(event.target.value);
@@ -47,15 +51,17 @@ function CreateAccount () {
         axios.post('https://drp21-backend.herokuapp.com/api/v1/uploadLogo', fd,{
           'Content-Type': 'multipart/form-data'
         }).then(response => console.log(response));
+        setEmail('')
+        setFirstname('');
+        setSurname('');
+        setCharityLogo(null);
       }).catch(error => console.log(error))
     } else {
       console.log('empty');
     }
+    let path = `login`
+    history.push(path)
 
-    setEmail('')
-    setFirstname('');
-    setSurname('');
-    setCharityLogo(null);
   }
 
   return (
