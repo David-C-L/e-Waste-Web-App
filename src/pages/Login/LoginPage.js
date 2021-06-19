@@ -2,25 +2,37 @@ import axios from 'axios';
 import './LoginPage.css';
 import { useContext, useState } from 'react';
 import { UserContext } from '../../UserContext';
-import {Link} from 'react-router-dom'
+import {Link, useHistory} from 'react-router-dom'
 import LoginDetails from './LoginDetails';
 
 function LoginPage() {
   const { user, setUser } = useContext(UserContext); 
   const [email, setEmail] = useState('');
+  const [emailError, setEmailError] = useState(false)
+
+  const history = useHistory();
 
   const handleEmail = event => {
     setEmail(event.target.value);
+    setEmailError(false)
   };
 
   const attemptLogin = email => {
+    console.log(email)
+    if (email === "") {
+      setEmailError(true)
+      return
+    }
     axios.get(`https://drp21-backend.herokuapp.com/api/v1/users/${email}`)
       .then(response => {
         setUser(response.data);
         setEmail('');
+        setEmailError(false)
+        let path = ``
+        history.push(path)
       })
       .catch(() => {
-        setEmail('');
+        setEmailError(true)
       }) 
   };
 
@@ -37,6 +49,7 @@ function LoginPage() {
               email={email}
               handleEmail={handleEmail}
               attemptLogin={attemptLogin}
+              emailError={emailError}
             />
             <div className='CreateAccountText'>
               <p>Don't have an account?
