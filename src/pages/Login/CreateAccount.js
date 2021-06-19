@@ -39,11 +39,25 @@ function CreateAccount () {
         'surname': surname,
         'charity': charity
       })
-      .then(response => console.log(response.data))
-      .catch(error => console.log(error))
+      .then(response => {
+        const charityEmail = response.data.email;
+
+        const fd = new FormData();
+        fd.append('logo', charityLogo);
+        fd.append('charity', email);
+
+        axios.post('https://drp21-backend.herokuapp.com/api/v1/uploadLogo', fd,{
+          'Content-Type': 'multipart/form-data'
+        }).then(response => console.log(response));
+      }).catch(error => console.log(error))
     } else {
       console.log('empty');
     }
+
+    setEmail('')
+    setFirstname('');
+    setSurname('');
+    setCharityLogo(null);
   }
 
   return (
@@ -67,22 +81,28 @@ function CreateAccount () {
             <label for='charityInput'> Charity name: </label>
             <input  id='charityInput' className='CreateAccountInput' 
               type='text' placeholder="Please enter your charity's name." 
+              value={firstname}
               onChange={handleFirstnameInput}
             />
             <br/><br/>
             <label for="photoUpload"> Upload Charity Logo: </label> <br/>
-            <input id="photoUpload" type="file" onChange={handleLogoSelected} />
+            <input id="photoUpload"
+            type="file"
+            onChange={handleLogoSelected}
+            />
             </>
           : <>
             <label for='firstNameInput'> First name: </label>
             <input  id='firstNameInput' className='CreateAccountInput' 
               type='text' placeholder='Please enter your firstname.' 
+              value={firstname}
               onChange={handleFirstnameInput}
             />
             <br/><br/>
             <label for='surnameInput'> Surname: </label>
             <input id='surnameInput' className='CreateAccountInput'
               type='text' placeholder='Please enter your surname.'
+              value={surname}
               onChange={handleSurnameInput}
             /></>
         }
