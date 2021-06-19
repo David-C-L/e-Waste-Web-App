@@ -93,7 +93,7 @@ Array [
           </button>
         </div>
         <button
-          className="Login-btn"
+          className="Login-btn btn"
           onClick={[Function]}
         >
           Login
