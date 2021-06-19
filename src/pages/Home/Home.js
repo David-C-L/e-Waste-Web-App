@@ -30,8 +30,6 @@ function Home() {
         history.push(path);
     }
 
-    console.log(user)
-
     return (
         <div className="Home">
             <header className="Home-header">
@@ -47,10 +45,10 @@ function Home() {
                         ?
                         <div className="LoggedIn">
                             <p>Welcome {user.firstname} {user.surname}</p>
-                            <button className="HomeLogOut" onClick={() => setUser(null)}>logout</button>
+                            <button className="HomeLogOut btn" onClick={() => setUser(null)}>logout</button>
                         </div>
                         :
-                        <button className="Login-btn" onClick={routeChangeLogin}>Login</button>
+                        <button className="Login-btn btn" onClick={routeChangeLogin}>Login</button>
                     }
                 </div>
             </header>

@@ -1,7 +1,8 @@
 import { useContext, useEffect } from 'react';
 import ListingRow from './ListingRow';
 import axios from 'axios';
-import {ListingPost} from '../../ListingPost'
+import { ListingPost } from '../../ListingPost'
+import TimeDateSort from '../TimeDateSort'
 
 function splitArray(array, groupSize) {
     const numGroups = Math.ceil(array.length / groupSize);
@@ -18,9 +19,10 @@ function filter(listings, search) {
     return listings
 }
 
+
 function Listings(props) {
 
-    const {listing, setListings} = useContext(ListingPost);
+    const { listing, setListings } = useContext(ListingPost);
 
     //TODO: GET request to fetch listings and display
     useEffect(() => {
@@ -34,9 +36,9 @@ function Listings(props) {
 
     return (
         <div className="Listings">
-            { listing === null || listing === undefined
+            {listing === null || listing === undefined
                 ? <p> No Listings </p>
-                : splitArray(filter(listing, props.search), 4).map(listingGroup =>
+                : splitArray(filter(listing, props.search).sort(TimeDateSort), 4).map(listingGroup =>
                     <ListingRow listings={listingGroup} />)
             }
         </div>
