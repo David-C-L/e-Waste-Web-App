@@ -28,7 +28,7 @@ function Request(props) {
                     ? <>
                         <p className="CharityRequest" style={{color: "red"}}>CHARITY REQUEST</p>
                         { props.listing.charityLogoId 
-                          ? <img className='' src={logoUrl + `${props.listing.charityLogoId}`} alt='charity logo' />
+                          ? <img className='CharityLogo' src={logoUrl + `${props.listing.charityLogoId}`} alt='charity logo' />
                           : <></>
                         }
                       </>
