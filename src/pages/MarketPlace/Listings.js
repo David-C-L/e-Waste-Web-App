@@ -36,7 +36,7 @@ function Listings(props) {
         <div className="Listings">
             { listing === null || listing === undefined
                 ? <p> No Listings </p>
-                : splitArray(filter(listing, props.search), 3).map(listingGroup =>
+                : splitArray(filter(listing, props.search), 4).map(listingGroup =>
                     <ListingRow listings={listingGroup} />)
             }
         </div>

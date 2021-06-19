@@ -36,7 +36,7 @@ function Requests(props) {
         <div>
             {request === null || request === undefined || request.length === 0
                 ? <p> No Listings </p>
-                : splitArray(filter([...(request.filter(l => l.ownerCharity)), ...(request.filter(l => !l.ownerCharity))], props.search), 3).map(listingGroup =>
+                : splitArray(filter([...(request.filter(l => l.ownerCharity)), ...(request.filter(l => !l.ownerCharity))], props.search), 4).map(listingGroup =>
                     <RequestRow listings={listingGroup} />)
             }
         </div>
