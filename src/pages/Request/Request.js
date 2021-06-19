@@ -1,5 +1,3 @@
-import { useContext } from 'react';
-import { UserContext } from '../../UserContext';
 import './Request.css';
 
 function Request(props) {
