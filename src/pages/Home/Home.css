@@ -73,10 +73,6 @@
 
 }
 
-.Home-btn:hover {
-  background-color: #42f548;
-}
-
 button {
   border-radius: 1ex;
 }
@@ -91,11 +87,10 @@ button {
   font-size: 100%;
 }
 
-.btn:hover {
-  background-color: #42f548;
-}
-
 .AppTitle {
   font-size: 3ex;
   margin: 2%;
+}
+button:hover {
+  background-color: #A7A7A7;
 }
