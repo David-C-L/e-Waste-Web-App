@@ -7,6 +7,7 @@ function CreateAccount () {
   const [firstname, setFirstname] = useState('');
   const [surname, setSurname] = useState('');
   const [charity, setCharity] = useState(false);
+  const [charityLogo, setCharityLogo] = useState(null);
 
   const handleEmailInput = event => {
     setEmail(event.target.value);
@@ -24,6 +25,10 @@ function CreateAccount () {
     setCharity(!charity);
     setFirstname('');
     setSurname('');
+  }
+
+  const handleLogoSelected = event => {
+    setCharityLogo(event.target.files[0]);
   }
 
   const handleSubmit = () => {
@@ -64,6 +69,9 @@ function CreateAccount () {
               type='text' placeholder="Please enter your charity's name." 
               onChange={handleFirstnameInput}
             />
+            <br/><br/>
+            <label for="photoUpload"> Upload Charity Logo: </label> <br/>
+            <input id="photoUpload" type="file" onChange={handleLogoSelected} />
             </>
           : <>
             <label for='firstNameInput'> First name: </label>
