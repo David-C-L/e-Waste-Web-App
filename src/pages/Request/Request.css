@@ -43,6 +43,12 @@
     font-weight: 500;
 }
 
+.CharityRequest {
+    margin: 0;
+    font-size: 1.1ex;
+    font-weight: 700;
+}
+
 .MessageOwner {
     font-size: 100%;
     font-weight: 500;

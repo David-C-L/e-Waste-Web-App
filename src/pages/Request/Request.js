@@ -10,7 +10,7 @@ function Request(props) {
     }
 
     var style = {
-        borderColor : borderColor
+        borderColor: borderColor
     }
 
     // TODO: Change to match requests 
@@ -19,8 +19,12 @@ function Request(props) {
             <h3 className="Title">{props.listing.title}</h3>
             <p className="Description"> {props.listing.description} </p>
             <div id='bottom'>
+                {props.listing.ownerCharity
+                    ? <p className="CharityRequest" style={{color: "red"}}>CHARITY REQUEST</p>
+                    : <div />
+                }
                 {/* <p className="TimeRemaining"> Available until: {props.listing.timeRemaining} </p> */}
-                <p className="TimeRemaining"> { props.listing.ownerCharity ? 'Available indefinitely' : 'Available until: ' + props.listing.availableUntil} </p>
+                <p className="TimeRemaining"> {props.listing.ownerCharity ? 'Available indefinitely' : 'Available until: ' + props.listing.availableUntil} </p>
                 <p className="TimeRemaining"> {(props.listing.ownerCharity ? 'Contact charity: ' : '') + props.listing.ownerEmail} </p>
                 {/* <Link className='MessageOwner' to='/'>Message the owner</Link> */}
             </div>
