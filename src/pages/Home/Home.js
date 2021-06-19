@@ -37,7 +37,7 @@ function Home() {
             <header className="Home-header">
                 <div className="HomeContainer" style={{ width: "90%" }}>
                     <img src={logo} className="Home-logo" alt="logo" />
-                    <p>ReusingElectronicsAndOtherStuff</p>
+                    <h3 className="AppTitle">ECycling</h3>
                     <div className="Home-redirects">
                         <button className="Home-btn" onClick={routeChangeMarketplace}>Give away something</button>
                         <button className="Home-btn" onClick={routeChangeRequests}>Looking for something</button>

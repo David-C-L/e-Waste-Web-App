@@ -94,3 +94,8 @@ button {
 .HomeLogOut:hover {
   background-color: #42f548;
 }
+
+.AppTitle {
+  font-size: 3ex;
+  margin: 2%;
+}
