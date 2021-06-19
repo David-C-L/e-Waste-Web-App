@@ -65,9 +65,11 @@ Array [
           className="Home-logo"
           src="recycle-logo.png"
         />
-        <p>
-          ReusingElectronicsAndOtherStuff
-        </p>
+        <h3
+          className="AppTitle"
+        >
+          ECycling
+        </h3>
         <div
           className="Home-redirects"
         >
