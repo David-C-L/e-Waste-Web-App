@@ -40,8 +40,6 @@ function CreateAccount () {
         'charity': charity
       })
       .then(response => {
-        const charityEmail = response.data.email;
-
         const fd = new FormData();
         fd.append('logo', charityLogo);
         fd.append('charity', email);

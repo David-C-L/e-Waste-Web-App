@@ -1,6 +1,10 @@
+import { useContext } from 'react';
+import { UserContext } from '../../UserContext';
 import './Request.css';
 
 function Request(props) {
+
+    const logoUrl = 'https://drp21-backend.herokuapp.com/api/v1/downloadLogo/';
 
     let borderColor = null
     if (props.listing.ownerCharity) {
@@ -13,6 +17,7 @@ function Request(props) {
         borderColor: borderColor
     }
 
+
     // TODO: Change to match requests 
     return (
         <div className='Request' style={style}>
@@ -20,13 +25,18 @@ function Request(props) {
             <p className="Description"> {props.listing.description} </p>
             <div id='bottom'>
                 {props.listing.ownerCharity
-                    ? <p className="CharityRequest" style={{color: "red"}}>CHARITY REQUEST</p>
-                    : <div />
+                    ? <>
+                        <p className="CharityRequest" style={{color: "red"}}>CHARITY REQUEST</p>
+                        { props.listing.charityLogoId 
+                          ? <img className='' src={logoUrl + `${props.listing.charityLogoId}`} alt='charity logo' />
+                          : <></>
+                        }
+                      </>
+
+                    : <></>
                 }
-                {/* <p className="TimeRemaining"> Available until: {props.listing.timeRemaining} </p> */}
                 <p className="TimeRemaining"> {props.listing.ownerCharity ? 'Available indefinitely' : 'Available until: ' + props.listing.availableUntil} </p>
                 <p className="TimeRemaining"> {(props.listing.ownerCharity ? 'Contact charity: ' : '') + props.listing.ownerEmail} </p>
-                {/* <Link className='MessageOwner' to='/'>Message the owner</Link> */}
             </div>
         </div>
     );
