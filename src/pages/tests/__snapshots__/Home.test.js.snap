@@ -34,13 +34,16 @@ Array [
       >
         Repair Forum
       </a>
-      <a
-        className="NavBarLink"
-        href="/login"
-        onClick={[Function]}
+      <div
+        className="UserSection"
       >
-        Login
-      </a>
+        <button
+          className="LogoutBtn"
+          onClick={[Function]}
+        >
+          Login
+        </button>
+      </div>
     </p>
   </div>,
   <div
@@ -72,27 +75,27 @@ Array [
             className="Home-btn"
             onClick={[Function]}
           >
-            Marketplace
+            Give away something
           </button>
           <button
             className="Home-btn"
             onClick={[Function]}
           >
-            Requests
+            Looking for something
           </button>
           <button
             className="Home-btn"
             onClick={[Function]}
           >
-            Repair Forum
-          </button>
-          <button
-            className="Home-btn"
-            onClick={[Function]}
-          >
-            Login
+            Need help repairing
           </button>
         </div>
+        <button
+          className="Login-btn"
+          onClick={[Function]}
+        >
+          Login
+        </button>
       </div>
     </header>
   </div>,
