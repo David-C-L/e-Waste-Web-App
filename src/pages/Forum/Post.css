@@ -19,11 +19,11 @@
 
 .Left-section-post {
     text-align: left;
-    width: 20%;
+    width: 10%;
 }
 
 .Center-section-post {
-    width: 65%;
+    width: 75%;
     text-align: left;
 }
 
@@ -76,7 +76,7 @@
 
 .Post-body {
   margin: 1ex;
-  font-size: 1ex;
+  font-size: 1.2ex;
 }
 
 .Details {

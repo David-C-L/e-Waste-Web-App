@@ -25,7 +25,7 @@ function Comments(props) {
                         body={ele.body}
                         dateTime={ele.datePosted}
                         authorEmail={ele.authorEmail}
-
+                        video={ele.video}
                     />
                 )}
         </div>

@@ -31,7 +31,8 @@ function CreateComment(props) {
         axios.post(`https://drp21-backend.herokuapp.com/api/v1/comments`, {
             post: props.id,
             author: user.email,
-            body: description
+            body: description,
+            video: video
         }, {
             'Access-Control-Allow-Origin': '*',
             'Content-Type': 'text/html; charset=UTF-8'
@@ -46,7 +47,7 @@ function CreateComment(props) {
         <div className="CreateComment">
             <div className="CommentBody">
                 <textarea className="CommentText" type="text" onChange={handleTextChange} value={description} placeholder="Create Comment" />
-                <textarea className="CommentVideo" type="text" onChange={handleVideoChange} value={video} placeholder="Video" />
+                <textarea className="CommentVideo" type="text" onChange={handleVideoChange} value={video} placeholder="Video if required (otherwise leave empty)" />
             </div>
             <div className="SubmitButtons">
                 <button className="SubmitComment" type="submit" onClick={handleSubmit}>Comment</button>

@@ -12,12 +12,18 @@ function Comment(props) {
                 <PostDetails dateTime={props.dateTime} />
             </div>
             <div className="Right-section">
-                <p className="Comment-body"> {props.body} </p>
-                <div className="VideoSection">
-                    <Video url="https://www.youtube.com/watch?v=A0y6XfnyPT4" />
-                </div>
-            </div>
 
+                {props.video && props.video !== ""
+                    ? <div className="CommentBodyWithVideo">
+                        <div className="LeftVideo">
+                            <Video video={props.video} />
+                        </div>
+                        <div className="RightVide">
+                            <p className="Comment-body"> {props.body} </p>
+                        </div>
+                    </div>
+                    : <p className="Comment-body"> {props.body} </p>}
+            </div>
         </div>
     )
 }
