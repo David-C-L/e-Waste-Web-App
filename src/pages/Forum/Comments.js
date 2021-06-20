@@ -11,7 +11,7 @@ function Comments(props) {
           .then(response => props.updateDisplay(response));
       }
       props.setReload(false);
-    }, [props]);
+    }, [props, props.setReload]);
 
     return (
         <div>
