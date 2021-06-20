@@ -1,4 +1,3 @@
-import './Video.css'
 
 function Video(props) {
 
