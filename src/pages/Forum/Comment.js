@@ -1,6 +1,7 @@
 import './Comment.css'
 import UserDetails from './UserDetails';
 import PostDetails from './PostDetails';
+import Video from './Video';
 
 function Comment(props) {
 
@@ -12,6 +13,9 @@ function Comment(props) {
             </div>
             <div className="Right-section">
                 <p className="Comment-body"> {props.body} </p>
+                <div className="VideoSection">
+                    <Video url="https://www.youtube.com/watch?v=A0y6XfnyPT4" />
+                </div>
             </div>
 
         </div>
