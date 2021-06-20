@@ -49,8 +49,10 @@ function CreateRequest(props) {
                 <div className="ListingFields">
                     <div className="ListingTop">
                         <textarea className="ListingTitle" type="text" onChange={handleTitleChange} value={title} placeholder="title" />
-                        <input className="DateTime" type="datetime-local" onChange={handleDateTimeChange} />
-                    </div>
+                        <div className="TimeInput">
+                            <p className="DateTimeText">Enter the date and time your request will expire:</p>
+                            <input className="DateTimeInput" type="datetime-local" onChange={handleDateTimeChange} />
+                        </div>                    </div>
                     <div className="ListingBottom">
                         <textarea className="ListingDescription" type="text" onChange={handleDescriptionChange} value={description} placeholder="description" />
                     </div>
