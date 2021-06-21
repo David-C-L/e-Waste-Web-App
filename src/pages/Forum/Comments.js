@@ -13,6 +13,8 @@ function Comments(props) {
       props.setReload(false);
     }, [props, props.setReload]);
 
+    console.log(props.getReq.data)
+
     return (
         <div>
             {props.getReq.data === undefined || props.getReq.data.comments.length === 0

@@ -37,9 +37,8 @@ function CreateRequest(props) {
         }, {
             'Access-Control-Allow-Origin': '*',
             'Content-Type': 'text/html; charset=UTF-8'
-        })
+        }).then(() => props.setRefresh(true));
 
-        props.setRefresh(true)
         event.preventDefault();
     }
 

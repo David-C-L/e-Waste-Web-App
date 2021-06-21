@@ -42,9 +42,9 @@ function CreatePost(props) {
     }, {
       'Access-Control-Allow-Origin': '*',
       'Content-Type': 'text/html; charset=UTF-8'
-    });
+    }).then(() => props.setReload(true))
 
-    props.setReload(true)
+    
     event.preventDefault();
   }
 

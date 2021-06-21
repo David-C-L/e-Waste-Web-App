@@ -35,10 +35,10 @@ function Home() {
             <header className="Home-header">
                 <div className="HomeContainer" style={{ width: "90%" }}>
                     <img src={logo} className="Home-logo" alt="logo" />
-                    <h3 className="AppTitle">ECycling</h3>
+                    <h3 className="AppTitle">eCycling</h3>
                     <div className="Home-redirects">
-                        <button className="Home-btn" onClick={routeChangeMarketplace}>Give away something</button>
-                        <button className="Home-btn" onClick={routeChangeRequests}>Looking for something</button>
+                        <button className="Home-btn" onClick={routeChangeMarketplace}>Give away electronics</button>
+                        <button className="Home-btn" onClick={routeChangeRequests}>Looking for electronics</button>
                         <button className="Home-btn" onClick={routeChangeRepairForum}>Need help repairing</button>
                     </div>
                     {user

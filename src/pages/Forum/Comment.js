@@ -4,8 +4,9 @@ import PostDetails from './PostDetails';
 import Video from './Video';
 
 function Comment(props) {
-
+    console.log(props.video)
     return (
+        
         <div key={props.id} className="Comment">
             <div className="Left-section">
                 <UserDetails email={props.authorEmail} />

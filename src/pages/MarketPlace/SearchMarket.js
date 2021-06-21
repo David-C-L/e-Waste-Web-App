@@ -11,8 +11,8 @@ function SearchMarket(props) {
     }
 
     const applySearch = () => {
-        props.setSearch(search)
         props.setRefresh(true)
+        props.setSearch(search)
     }
 
     const cancel = () => {

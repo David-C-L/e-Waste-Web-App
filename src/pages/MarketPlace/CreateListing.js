@@ -31,6 +31,7 @@ function CreateListing(props) {
 
     const handleCancel = (event) => {
         props.setSearchBar(true)
+        props.setRefresh(true)
     }
 
     const submit = (event) => {
@@ -60,9 +61,10 @@ function CreateListing(props) {
                     })
                         .then(response => console.log(response.data));
                 }
-            });
+                
+            })
+            .then(() => props.setRefresh(true));
 
-        props.setRefresh(true)
         event.preventDefault();
     }
 

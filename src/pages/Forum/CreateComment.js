@@ -36,7 +36,8 @@ function CreateComment(props) {
         }, {
             'Access-Control-Allow-Origin': '*',
             'Content-Type': 'text/html; charset=UTF-8'
-        });
+        }).then(() => props.setReload(true))
+
         setDescription("")
         setVideo("")
         event.preventDefault();
