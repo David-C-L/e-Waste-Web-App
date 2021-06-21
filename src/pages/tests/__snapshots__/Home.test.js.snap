@@ -68,7 +68,7 @@ Array [
         <h3
           className="AppTitle"
         >
-          ECycling
+          eCycling
         </h3>
         <div
           className="Home-redirects"
@@ -77,13 +77,13 @@ Array [
             className="Home-btn"
             onClick={[Function]}
           >
-            Give away something
+            Give away electronics
           </button>
           <button
             className="Home-btn"
             onClick={[Function]}
           >
-            Looking for something
+            Looking for electronics
           </button>
           <button
             className="Home-btn"
