@@ -37,8 +37,8 @@ function Home() {
                     <img src={logo} className="Home-logo" alt="logo" />
                     <h3 className="AppTitle">eCycling</h3>
                     <div className="Home-redirects">
-                        <button className="Home-btn" onClick={routeChangeMarketplace}>Give away electronics</button>
-                        <button className="Home-btn" onClick={routeChangeRequests}>Looking for electronics</button>
+                        <button className="Home-btn" onClick={routeChangeMarketplace}>Give or get devices</button>
+                        <button className="Home-btn" onClick={routeChangeRequests}>Request some devices</button>
                         <button className="Home-btn" onClick={routeChangeRepairForum}>Need help repairing</button>
                     </div>
                     {user
