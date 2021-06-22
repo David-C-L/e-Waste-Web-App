@@ -77,13 +77,13 @@ Array [
             className="Home-btn"
             onClick={[Function]}
           >
-            Give away electronics
+            Give or get devices
           </button>
           <button
             className="Home-btn"
             onClick={[Function]}
           >
-            Looking for electronics
+            Request some devices
           </button>
           <button
             className="Home-btn"
