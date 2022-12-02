@@ -1,0 +1,31 @@
+stages:
+  - frontend-tests
+  - test-deployment
+  - production-deployment
+
+variables:
+  PORT_NO: 3000
+
+frontend-tests:
+  stage: frontend-tests
+  script:
+    - npm install
+    - npm run test
+
+test-deployment:
+  stage: test-deployment
+  script:
+    - echo "Killing old running process."
+    - kill -9 $(lsof -t -i:$PORT_NO) || echo "Nothing to kill or kill failed"
+    - npm install
+    - CI=false npm run build
+    - export PORT=$PORT_NO
+    - screen -m -d serve -s build -l $PORT_NO
+
+production-deployment:
+  stage: production-deployment
+  script:
+    - echo "Deploying to production"
+    - dpl --provider=heroku --app=drp21 --api-key=$HEROKU_API_KEY
+  only:
+    - master
